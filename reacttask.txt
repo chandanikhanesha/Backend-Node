@@ -1,0 +1,19 @@
+===react js taskkk=============
+1.top 5 netflix series
+2.greeting website
+3.calculator
+4.use props in netflix series
+5.use array in netflix series
+6.slot machine
+7.add emoji in text
+8.get time on refreshing or click the buttton using hooks
+9.create digital clock
+10.login form 
+11.todo list with strike and delete
+12.bootstarp 4 use
+13.changing title value of website on button click
+14.create google note
+1.API call to grt pockemon data
+17.navbar using react dom
+18.live serch
+

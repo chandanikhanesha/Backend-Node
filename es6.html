@@ -1,0 +1,162 @@
+<script>
+    // templet literal (string) 
+    // let name="chandani";
+    // let fname="khanehsa";
+    // console.log(`my name is ${name} ${fname}`);
+
+    // //string method
+    // console.log(`${name}`.startsWith('c'));
+    // console.log(`${name}`.endsWith('c'));
+    // console.log(`${name}`.repeat(5));
+
+    //array distracting
+     let bio=['ck','bk','jk'];
+     let[top1,top2,top3]=bio;
+
+     console.log(top1,top2);
+
+     //swap number without using third var
+
+     let a=5;
+     let b=10;
+     console.log(a,b);
+     [a,b]=[b,a];
+     console.log(a,b);
+
+     //object distructing
+     const data={
+         name:"ck",
+         age:20,
+         study:'bca',
+         hobb:{
+             first:'reading',
+             sec:"sport"
+         }
+     }
+     let {name,age,study,hobb}= data;
+     console.log(`my name is${name} my age is${age} mu hobb is ${hobb.first}`);
+
+     //fat arraow function
+
+    //   let fat=() => a+b;
+    //   console.log(fat(4,5));
+
+    let fat=(a,b) =>{
+        a=5;
+        b=6;
+        return a*b;}
+    console.log(fat());
+
+    // //deafult parameter
+
+     let def=(a,b=1) =>{return a+b;}
+    console.log(def(4));
+    
+    //rest parameter --parameter ne array ma seperate kare
+
+    // function rp(a,b,c,d)
+    // {
+    //     console.log(a+b+c+d);
+    // }
+    // rp(1,2,3,4);
+
+    function rp(...input)
+    {
+        console.log(...input);
+        let tot=0;
+        for(let i of input)
+        {
+            tot+=i;
+        }
+        console.log(tot);
+    }
+    rp(1,2,3,4,5);
+
+    
+    //spread oprator =opposite to the rest parameter
+    function sp(a,b,c)
+    {
+        console.log(a+b+c);
+    }
+    let sp1=[10,20,30];
+    sp(...sp1);
+
+    let arr1=[1,2,3];
+    //copy
+    let arr2=[...arr1,4,5];
+    
+    //concat
+     arr1=[...arr1,...arr2];
+    
+    console.log(arr2);
+    console.log(arr1);
+   
+
+//Math  object
+    //math.sign and map.trunc
+
+    let mp = -4; //nan
+    console.log(Math.sign(mp));//its return 1,-1, or 0//nan
+
+    let mp1 = 5.66;
+    console.log(Math.trunc(mp1));//5.667 =5
+
+    //exponentiation operators(**)
+    let e1=2;
+    let e2=5;
+
+    console.log(e1**e2);
+    console.log(3**2);
+    console.log(3**e1);
+
+    
+ //global method
+// 1.isfinite
+// 2.isnan
+// 3.isinteger
+
+let fi= 5;//Infinity;
+console.log(Number.isFinite(fi));
+
+let nn= 'ck';
+console.log(isNaN(nn));//true;
+console.log(Number.isNaN(nn));//false
+
+let ii=5;
+console.log(Number.isInteger(ii));//return only integer value.
+
+//class,object,inheritence
+
+class student {
+    constructor(name,age,cls)
+    {
+        this.name1=name;
+        this.age1=age;
+        this.cls1=cls;
+    }
+    //static - another class can not inherit this properties
+    biodata()
+    {
+      return `hi ${this.name1} ${this.age1} ${this.cls1} `;
+    }
+
+}
+class player extends student{
+    constructor(name,age,cls,game)
+    {
+        super(name,age,cls);
+        this.game1=game;
+    }
+    player_bio()
+    {
+        console.log( `${super.biodata()} i am the player of ${this.game1}`);
+    }
+
+}
+
+let obj1= new player('ck',20,'bca','football');
+let obj2= new player('bk',20,'bca','hocky');
+obj1.player_bio();
+obj2.player_bio();
+
+     </script>

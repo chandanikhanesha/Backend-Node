@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        #test {
+            height: 150px;
+            width: 100px;
+            background-color: blue;
+        }
+     #stop{
+            height: 150px;
+            width: 100px;
+            background-color:brown;
+        }
+    </style>
+</head>
+<body onresize="sizefunction()">
+    <form action="" onsubmit="submitfunction()">
+        <label>name </label>
+        <input type="text" id="name" onfocus="focusfunction(this)" onblur="blurfunction(this)"  onchange="changefunction(this)" onselect="selectfunction(this)" required/><br><br>
+        <label>phone no </label>
+        <input type="text" id="number" onfocus="focusfunction(this)" onblur="blurfunction(this)" oninput="inputfunction(this)"  onchange="changefunction(this)" oninvalid="alert('fill the number field')" required/><br><br>
+        <label>city </label>
+        <select id="city"  oninput="inputfunction(this)" onchange="changefunction(this)">
+            <option>surat</option>
+            <option>mumbai</option>
+            <option>vadodra</option>
+            <option>pune</option>
+        </select><br><br>
+        <input type="submit">
+        </form>
+        <div id="test" style="border: 1px solid black;"></div><br><br>
+        <div id="stop"  stle="border: 2px solid black;"></div>
+        <button onclick="stop()">stop animation</button>
+        <button onclick="openwindow()">open window</button>
+        <button onclick="closewindow()">close window</button>
+        <button onclick="movewindow()">move window</button>
+        <button onclick="resize()">resize window</button>
+        <button onclick="scroll()">scroll window</button>
+        <button onclick="clickwindow()">click</button>
+        <button onclick="backfunction()">back</button>
+        <button onclick="forfunction()">forward</button>
+
+
+        <script>
+            function focusfunction(elem)
+            {
+                elem.style.background="red";
+            }
+
+            function blurfunction(elem)
+            {
+                elem.style.background="";
+            }
+            function inputfunction(elem)
+            {
+                var x= elem.value;
+                document.getElementById("test").innerHTML =x;
+            }
+            function changefunction(elem)
+            {
+                var x= elem.value;
+                document.getElementById("test").innerHTML=x;
+            }
+            function selectfunction(elem)
+            {
+                console.log("you selected some text");
+            }
+            function submitfunction()
+            {   var x= document.getElementById("name").value;
+                console.log("your form is submitted");
+                alert( x +" "+"your form is submitted");
+            }
+
+            function sizefunction()
+               { console.clear();
+                var ih = window.innerHeight;
+                console.log(ih + "inner height");
+                var oh = window.outerHeight;
+                console.log(oh + "outer height");
+                var iw = window.innerWidth;
+                console.log(iw +"inner width");
+                var ow= window.outerWidth;
+                console.log(ow +"outer width")
+                }
+                var win;
+                 function openwindow()
+            {  
+               win= window.open("","","width=500px,height=300px,left=100px");
+               win.document.write("<p>hello i am second window</p>")
+            }
+             function closewindow()
+             {
+                 win.close();
+             }
+             function movewindow()
+             {
+                 win.moveTo(100,100);
+                 win.focus();
+
+             }
+             function resize()
+             {
+                 win.resizeBy(400,400);
+                 win.focus();
+             }
+             function scroll()
+             {
+                 window.scrollBy(0,40);
+
+             }
+             function clickwindow()
+             {  //location.href="file:///D:/javascript/demo.html";
+                 location.assign("file:///D:/javascript/demo.html");
+                // location.replace("file:///D:/javascript/demo.html");
+                //location.reload("file:///D:/javascript/demo.html");
+             }
+             function backfunction()
+             {
+                 history.back();
+             }
+             function forfunction()
+             {  history.forward();
+                // history.go(1);
+             }
+
+        </script>
+    <!--animation-->
+    <script src="anim.js">
+        
+    </script>
+</body>

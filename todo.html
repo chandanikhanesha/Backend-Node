@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<head>
+    <title>todo list</title>
+    <style>
+        #data{
+            border: 2px solid blue;
+
+        }
+        #data2{
+            display: none;
+        }
+        
+    
+        
+    </style>
+</head>
+<body onload="pageload()" >
+    <form>
+
+        
+        
+       Name: <input type="text" name="name" id="name" placeholder="enter your name"><br><br>
+        
+       <input type="button" name="add" value="add" id="add" style="background-color:goldenrod;" onclick="addnamefun()" > 
+       <input type="button" name="save" value="save" id="save" style="background-color: cornsilk;" ><br><br>
+       <div id="data">    </div>
+       <div id="data2">
+           <input type="button" name="update" value="update" id="update" style="background-color:blue;"  onclick="updatefun(this)">
+           <input type="button" name="delete" value="delete" id="delete" style="background-color:crimson;"  onclick="deletefun(this)">  
+       </div><br>
+       <div id="data3">
+       </div>
+       <div id="data4">
+       <input type="button" name="all" value="all" id="all" style="background-color: chartreuse;" onclick="allfun()"> 
+       <input type="button" name="active" value="active" id="active" style="background-color: chartreuse;" onclick="acvtivefun()">
+       <input type="button" name="completed" value="completed" id="completed" style="background-color: chartreuse;" onclick="comfun()">
+       <input type="button" name="clear completed" value="clear completed" id="clear completed" style="background-color: chartreuse;" onclick="clearcomfun()">
+    </div>
+    <div id="com"></div>
+     </form>
+     <script>
+         var tot=0;
+         var i=0;
+         function pageload()
+         {
+             var target=document.getElementById("data");
+             var item=document.getElementById("data3");
+             if(target.children.length==0)
+             {      
+                 item.innerHTML=tot +"item left";
+                 var mess="<h1>no record found</h1>";
+                 target.insertAdjacentHTML("afterbegin",mess);
+             }
+           
+             
+            }
+            var obj= new Object();
+            var arr=new array();
+
+         function addnamefun()
+         {     //var add=document.getElementById("add").value;
+             // if(add="add");
+             //if(add="add")
+             
+                
+              
+        
+             var x= document.getElementById("name").value;
+             var target=document.getElementById("data");
+            var ele=document.createElement("p");
+            var pt=document.createTextNode(x);
+            ele.appendChild(pt);
+            target.appendChild(ele);
+
+            
+            
+           
+
+
+           ele.setAttribute("onclick","stext(this)");
+
+
+            var copy=document.getElementById("data2").children[0].cloneNode();
+            var copy1=document.getElementById("data2").children[1].cloneNode();
+            ele.appendChild(copy);
+            ele.appendChild(copy1);
+           
+             tot=tot+1;
+            i=i+1;
+            if(i==1)
+            {   
+                var c= target.childNodes[0];
+              //  console.log(c);
+                target.removeChild(c);
+            }
+            if(tot>=1)
+            {   var item=document.getElementById("data3");
+                item.innerHTML = tot +" item left";
+            }
+            
+           
+
+            document.getElementById("name").value="";
+            document.getElementById("address").value="";
+            // document.getElementById("data2").style.display="block";
+              
+              
+            }
+         function stext(thise)
+         {
+             console.log(thise);
+             
+               var che=thise.childNodes[0].innerHTML;
+               if(che==undefined)
+               {
+
+            var str=thise.innerText;
+            var s=document.createElement("strike");
+            var newe=document.createTextNode(str);
+             s.appendChild(newe);
+
+             var oldElement=thise.childNodes[0];
+             thise.replaceChild(s,oldElement);    
+
+                tot=tot-1;
+                var item =document.getElementById("data3");
+                item.innerHTML= tot +"item exit";
+         }
+               else{
+                   var css=thise.childNodes[0];
+                   var b =css.hasAttribute("style");
+
+                   if(b==true)
+                   {
+                       css.removeAttribute("style");
+                       tot=tot-1;
+                       var item=document.getElementById("data3");
+                       item.innerHTML=tot+"item left";
+
+                   }
+                   else{
+                       css.style.textDecoration="none";
+                       tot=tot+1;
+                       var item=document.getElementById("data3");
+                       item.innerHTML=tot+"item left";
+                   }
+               
+                }
+            
+            }
+             
+             
+         function updatefun(thise)
+         {
+           
+           
+             var target=document.getElementById("data");
+             var update=document.getElementById("update");
+
+             var parent=thise.parentElement;
+             var name=parent.innerText;
+            // document.getElementById("add").value="save";
+             document.getElementById("name").value=name;
+             
+
+            
+
+            document.getElementById("save").addEventListener("click",savefun);
+
+            
+           
+
+         
+         function savefun()
+         { 
+            
+          
+            var x= document.getElementById("name").value;
+            var newele= document.createTextNode(x);
+            var parent =thise.parentElement;
+          
+            
+            var oldElement =parent.childNodes[0];
+            
+            console.log(oldElement);
+           
+            parent.replaceChild(newele,oldElement);
+            document.getElementById("name").value="";
+           /* document.getElementById("add").value="add";
+            document.getElementById("name").value="";*/
+            document.getElementById("save").removeEventListener("click",savefun);          
+         }
+         }
+         function deletefun(thise)
+         {   
+            var target=document.getElementById("data");
+            var item=document.getElementById("data3");
+            var parent =thise.parentElement;
+            target.removeChild(parent);
+
+           // tot=tot-1;
+            i=i-1;
+            item.innerHTML=tot +"item left";
+            if(i==0)
+            {
+                target.innerHTML="no found data";
+            }
+
+          
+           
+
+             
+           /* if(tot==0)
+                {
+                   
+                    item.innerText= tot + "item left";
+                  
+                }*/
+                
+            //parent.style.display="none";
+
+           // document.getElementById("name").value=name;
+            //var oldElement=target.children[0];
+            //target.removeChild(oldElement);
+             
+         }
+        function activefun()
+           {    /*var obj=document.getElementById("data").children;
+                var target=document.getElementById("data");
+                console.log(obj);*/
+                                   
+
+           
+           }
+          function allfun()
+          {
+            var obj=document.getElementById("data").children;
+              var target=document.getElementById("data");
+              for(d in obj)
+              console.log(obj[d].innerText);
+      
+          }
+          function comfun()
+          {
+              var lst=document.getElementById("data");
+              lst.style.display="none";
+              var div=document.getElementById("com");
+              lst.style.display="block";
+          }
+          function clearcomfun()
+          {
+              var lst=document.getElementById("data");
+              lst.innerHTML="";
+
+              var item=document.getElementById("data3");
+              tot=tot-1;
+            item.innerHTML=tot +"item left";
+          }
+           
+            
+     </script>
+</body>
+</html>

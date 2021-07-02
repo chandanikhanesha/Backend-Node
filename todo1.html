@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<head>
+    <title>todo list</title>
+    <style>
+        #data{
+            border: 2px solid blue;
+
+        }
+        #data2{
+            display: none;
+        }
+        li.checked{
+            text-decoration: line-through;
+        }
+        
+    </style>
+</head>
+<body >
+    <form method="post">
+
+        
+        
+       Name: <input type="text" name="name" id="name" placeholder="enter your name"><br><br>
+       Address: <textarea placeholder="enter your address" id="address" value="address"></textarea><br><br>
+       Gender:<input type="radio" value="female" id="gender" name="gender">female
+             <input type="radio" value="male" id="gender1" name="gender">male<br><br>
+        Hobbies:<input type="checkbox" value="sport" id="hobbies">sport
+                <input type="checkbox" value="reading" id="hobbies1">reading
+                <input type="checkbox" value="singing" id="hobbies2">singing<br><br>
+        State:<select id="state">
+            <option value="gujarat">Gujarat</option>
+            <option value="maharastra">Maharastra</option>
+            <option value="panjab">Panjab</option>
+            <option value="rajasthan">Rajasthan</option>
+        </select><br><br>
+        
+       <input type="button" name="add" value="add" id="add" style="background-color:goldenrod;" onclick="addnamefun()" > 
+       <input type="button" name="save" value="save" id="save" style="background-color: cornsilk;" ><br><br>
+       <ul id="data">  </ul>
+       <div id="data2">
+           <input type="button" name="update" value="update" id="update" style="background-color:blue;"  onclick="updatefun(this)">
+           <input type="button" name="delete" value="delete" id="delete" style="background-color:crimson;"  onclick="deletefun(this)">  
+       </div><br>
+       <table border="1px" id="tab">
+           <th>name</th>
+           <th>address</th>
+           <th>gender</th>
+           <th>hobbies</th>
+           <th>state</th>
+       </table>
+</form>
+<script>
+    var tot=0;
+    var i=0;
+    var row=1;
+    const arr=new Array();
+     function addnamefun()
+     {
+        var n= document.getElementById("name").value;
+        var add=document.getElementById("address").value;
+        //var ge=document.getElementById("gender").value;
+        var f=document.getElementById("gender");
+        var m=document.getElementById("gender1");
+        if(m.checked==true)
+        {
+            var ge="male";
+        }
+        else
+        {
+            var ge="female";
+        }
+        var ho="";
+        var h=document.getElementById("hobbies");
+         var h1=document.getElementById("hobbies1");
+         var h2=document.getElementById("hobbies2");
+         if(h.checked==true)
+         {
+             ho+="sport,";
+         }
+         if(h1.checked==true)
+         {
+             ho+="reading,";
+         }
+         if(h2.checked==true)
+         {
+             ho+="singing,";
+         }
+        
+          var st=document.getElementById("state");
+          var state=(st.options[st.selectedIndex].value);
+        //   switch(st)
+        //  {
+        //     case "gujarat":
+        //      break;   
+        //     case "maharastra":
+        //      break;  
+        //     case "panjab":
+        //      break;  
+        //     case"rajasthan" :
+        //      break;  
+        //     default:
+        //     break; 
+         
+        //  }
+
+
+        var ob=new Object();
+        ob.name=n;
+        ob.address=add;
+        ob.gender=ge;
+        ob.hobbies=ho;
+        ob.state=state;
+        arr[i]=ob;
+    
+        var target=document.getElementById("data");
+        target.innerHTML="";
+        
+        for( var j=0;j<arr.length;j++)
+        {
+            var newele=document.createElement("li");
+            var newn=document.createTextNode("name:"+arr[j].name+"\t");
+            var newadd=document.createTextNode("address:"+arr[j].address+"\t");
+            var newge=document.createTextNode("gender:"+arr[j].gender+"\t");
+            var newho=document.createTextNode("hobbie:"+arr[j].hobbies+"\t");
+            var newst=document.createTextNode("state:"+arr[j].state+"\t");
+
+            //var copy=document.getElementById("data2").children[0].cloneNode();
+            var copy1=document.getElementById("data2").children[1].cloneNode();
+            newele.appendChild(newn);
+            newele.appendChild(newadd);
+            newele.appendChild(newge);
+            newele.appendChild(newho);
+            newele.appendChild(newst);
+
+           // newele.appendChild(copy);
+            newele.appendChild(copy1);
+            target.appendChild(newele);
+            var list = document.querySelector('ul');
+        list.addEventListener('click', function(st1) {
+            if (st1.target.tagName === 'LI') 
+            {
+                st1.target.classList.toggle('checked');
+                 }
+            }, false);
+
+            
+        }
+    
+     i=i+1;
+                var ds=document.getElementById("tab");
+                var irow=ds.insertRow(row);
+                var c1=irow.insertCell(0);
+                var c2=irow.insertCell(1);
+                var c3=irow.insertCell(2);
+                var c4=irow.insertCell(3);
+                var c5=irow.insertCell(4);
+
+                c1.innerHTML=n;
+                c2.innerHTML=add;
+                c3.innerHTML=ge;
+                c4.innerHTML=ho;
+                c5.innerHTML=state;
+                row++;
+            document.getElementById("name").value="";
+            document.getElementById("address").value="";
+            
+
+     }
+         function deletefun(thise)
+         {   
+            var target=document.getElementById("data");
+            var parent =thise.parentElement;
+            target.removeChild(parent);
+         }
+
+        
+         
+</script>
+</body>
+</html>

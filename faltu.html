@@ -1,0 +1,46 @@
+<script>
+    function addfun()
+    {
+        var x= document.getElementById("name").value;
+        var target=document.getElementById("data");
+        var ele=document.createElement("p");
+        var pt=document.createTextNode(x);
+        ele.appendChild(pt);
+        target.appendChild(ele);
+
+        var copy=document.getElementById("data2").children[0].clonecode();
+        var copy1=document.getElementById("data2").children[1].clonecode();
+        ele.appendChild(copy);
+        ele.appendChild(copy1);
+    }
+    function updatefun(thies)
+    {
+        var target= document.getElementById("data");
+        var update=document.getElementById("update");
+
+        parent=thies.parentElement;
+        name=parent.innerText;
+        document.getElementById("data").value=name;
+
+            document.getElementById("save").addEventListener("click",savefun);
+
+    }
+    function savefun()
+    {
+        var x=document.getElementById("name").value;
+        var newele=document.createTextNode(x);
+        parent=thies.parentElement;
+        var oldElement=parent.children[0];
+         
+        parent.replacechild(newele,oldElement);
+
+        documemt.getElementById("save").removeEventLister("click",savefun);
+        }
+
+        function deletefun()
+        {
+           var target=document.getElementById("data");
+           parent=thies.parentElement;
+           target.removeChild(parent);
+        }
+</script>

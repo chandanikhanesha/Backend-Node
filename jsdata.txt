@@ -1,0 +1,67 @@
+javascript
+----------------11\1\2021-----------------------------
+
+=comment
+=variable
+=data type
+=opreators
+=if
+=elseif
+=switch
+=alert,prompt,confirm box
+=function
+=events
+=loops
+=break,continue
+=event
+
+=========12\1\2021======
+=nested loop
+=array
+=multidimensional aarray
+=arraymethod
+=foreACH LOOP
+=object
+=array of object
+=for in loop
+=map method
+=string
+=number
+
+=======13\1\2021========
+math method
+date method
+demo intro
+demo targeting method
+demo get and set
+demo query selector
+demo css methods
+addevenrlistener method
+class list method
+parent element and parent node
+childern and children node
+firstchild and last child
+next sibling and previous sibling
+dom create method
+append child and insert before
+insertadjustntelemrnt method
+replace child and remove child
+clone node method
+cantains method
+hasarrtibute and haschildnode method
+isequalnode method
+
+=====18-1-2021=================
+from events
+setinterval and clearinterval
+settimeour and clear timeout
+browser object mopdel
+window width and height
+window open and close
+window resizeto and resizeby
+window moveto and moveby
+window scrollto and scrollby
+location object
+histroy object
+
+
