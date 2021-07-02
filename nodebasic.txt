@@ -1,0 +1,163 @@
+node js
+=====> node js javascript running on server
+build on chrome v8 engine server.
+-it is debug the javascript code on outside the browser.
+-we can also create our own server in node js for our application.
+-node js is single threaded means we have to write all code in single file.
+-we can make module of page and make api and that api we can use in main page.
+-node js is mainly used in read chat application like wp,ubar,pay pal
+-node js give feature of repl it is similar to  cmd .it is called the node cmd
+r - read
+e - eval 
+p- print 
+l -loop
+
+create new package file--- npm init
+-==>node js provide their core modules .
+
+1.file system
+2.operating system.
+3.path module
+4.npm modules
+5.http modules
+
+ we can use their modules like this---- 
+file systeam provide their properties and method.
+we can access like this -->const fs=require("fs");
+run file->node filename
+
+-with the help of node core modules we can do crud operation on our file and folder.
+they have two method first is syncronouc
+example- fs.mkdirsync(); , fs.rmdirsync();, fs.writefilesynce(); ,fs,readfilesync("filename" ,"utf-8");-for read orignal data
+
+-second is asyncronouc
+-in this method we have to call back a function
+example- fs.mkdir(); , fs.rmdir();,  fs.appendfile("filename",(err,data)=>{console.log(data)});
+
+mostly ussed method is asyncronous beacuse it is speedy then syncronous.
+
+==>operating system  modules provide their property and method
+we can access like this -->const os=require("os");
+
+=>path modules give dir and file path releted method and property
+const path=require("path);
+example:console.log(path.dirname("pathname"));
+	console.log(path.extname("pathname"));
+	console.log(path.basename("pathname"));
+
+
+==>create and export your own modules
+ **create,import:	
+- const { function add , var } =require("./filename");
+console.log(add(5,5));
+connsole.log(name);
+
+**export:
+ const add =(a,b)=>{
+	return a+b;
+		};
+const name="ck";
+
+module.exports={add,name}
+------------------------
+
+
+===>import npm module package in node
+const chalk =require("chalk");
+
+===>import global npm module
+npm install nodemon -g
+
+==>  all data are contain in module wrraper function,that can take a private data
+it is work behind the code and it  work like iife 
+
+====******creating our own web server threw http modules
+
+const http =require("http")
+
+const server =http.createserver((req,res)=>{
+  res.end("hellloooooooooooo") });
+
+server.listen(portnum-9000,"localhost",()=>{
+console.log(listen to server) });
+
+
+///********handled http request in node
+
+const http =require("http")
+
+const server =http.createserver((req,res)=>{
+
+	if(req.url=="/")
+		{ res.end("hellloooooooooooo")}
+	else if(req.url =="/about")
+		{res.end("its about)}
+	else
+		{res.writehead(404,{"content-type:"text/html"})
+		res.end("404 error")}
+  });
+
+////=====json-javascript object notation ,it is lightweight format to store and transfer data.
+used when data sent webserver to webapages
+
+converd ypur object data into json:
+
+const jsondata  = json.stringify(objname)
+console.log(jsondata)
+
+converd your json data into object:
+const objdata =json.parse(jsondata)
+
+
+//==create your simple api
+
+const fs=require("fs");
+const server =http.createserver((req,res)=>{
+
+		***const data =fs.readfilesync(`${__dirname}/filename`,"utf-8")
+		***const objdata = json.parse(data)
+
+	if(req.url=="/")
+		{ res.end("hellloooooooooooo")}
+
+	**else if(req.url =="/filename")
+		**{res.writehead(202,{"content-type:application/json"})
+		**res.end(objdata[0].name)}
+	else
+		{res.writehead(404,{"content-type:"text/html"})
+		res.end("404 error")}
+  });
+
+
+///===event modules is build-in-modules in nodejs
+create own event fire,event listener
+/handling event in node js with eventemitter
+
+const eventemitter = require("events")
+
+const events= new eventemitter();
+
+event.on("sayhi",()=>{console.log("hy")})  == call event
+event.on("sayhi",(sc,msg)=>{console.log(`${sc},${msg}`)})
+
+event.emit("sayhi") ; ==define event
+event.emit("sayhi",202,"ok") ; ==pass parameter
+
+////=stream  are object in node js
+streaming means write and read the data live 1.data 2.read 3.error 4.finish
+
+const rstream = fs.createreadstream(filename);
+
+rstream.on('data',(chunkdata)=>{
+res.write(chunkdata)
+})
+
+rstream.on("end" ()=>{
+re.end();}
+
+//another way of stream
+
+stream.pipe()method use to readable file ->connect to ->writable file
+
+const rstream = fs.createreadstream(filename);
+rstream.pipe(res);
