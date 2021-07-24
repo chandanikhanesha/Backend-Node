@@ -1,0 +1,10 @@
+***completeed task in tranning period.****
+
+
+1.complete react js  all important functions and methods
+2.make login,signup,forgot,verify,reset,payment api in node js and express js
+3.store data in mongo db  data base
+4.sendbox payment in project
+5.sign in with google and sign with facebook in project
+6.i know the redux implementation in react project
+7.make ui  with react  material and react bootstarp
