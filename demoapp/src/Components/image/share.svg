@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="23" viewBox="0 0 23 23">
+  <defs>
+    <clipPath id="clip-share">
+      <rect width="23" height="23"/>
+    </clipPath>
+  </defs>
+  <g id="share" clip-path="url(#clip-share)">
+    <rect width="23" height="23" fill="rgba(255,255,255,0)"/>
+    <g id="share-2" data-name="share" transform="translate(0.915 0.918)">
+      <path id="Path_25" data-name="Path 25" d="M143.63,6.131,137.92.2a.659.659,0,0,0-1.133.458V3.514h-.22A8.574,8.574,0,0,0,128,12.079V13.4a.65.65,0,0,0,.513.63.588.588,0,0,0,.145.018.682.682,0,0,0,.6-.375,7.205,7.205,0,0,1,6.481-4.005h1.044v2.855a.659.659,0,0,0,1.133.457l5.71-5.929a.659.659,0,0,0,0-.914Zm0,0" transform="translate(-122.729 0)" fill="#fff"/>
+      <path id="Path_26" data-name="Path 26" d="M18.45,102.908H2.639A2.638,2.638,0,0,1,0,100.272v-12.3A2.638,2.638,0,0,1,2.639,85.34H5.274a.878.878,0,0,1,0,1.757H2.639a.879.879,0,0,0-.878.878v12.3a.879.879,0,0,0,.878.878H18.45a.879.879,0,0,0,.878-.878V93.245a.878.878,0,1,1,1.757,0v7.027a2.638,2.638,0,0,1-2.635,2.635Zm0,0" transform="translate(0 -81.826)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

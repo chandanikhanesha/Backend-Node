@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="23" viewBox="0 0 23 23">
+  <defs>
+    <clipPath id="clip-damage">
+      <rect width="23" height="23"/>
+    </clipPath>
+  </defs>
+  <g id="damage" clip-path="url(#clip-damage)">
+    <rect width="23" height="23" fill="rgba(255,255,255,0)"/>
+    <g id="swords" transform="translate(1 1)">
+      <path id="Path_15" data-name="Path 15" d="M380.074,377.077l-2.243-2.242-2.847,2.847,2.243,2.243a2.017,2.017,0,0,0,2.847-2.847Zm0,0" transform="translate(-359.605 -359.462)" fill="#fff"/>
+      <path id="Path_16" data-name="Path 16" d="M278.233,271.993a1.752,1.752,0,0,0-2.478,0l-3.6,3.6a1.752,1.752,0,0,0,2.478,2.478l3.6-3.6A1.752,1.752,0,0,0,278.233,271.993Zm0,0" transform="translate(-260.498 -260.345)" fill="#fff"/>
+      <path id="Path_17" data-name="Path 17" d="M.53,377.077h0a1.967,1.967,0,0,0,.086,2.763,1.978,1.978,0,0,0,2.762.084l2.244-2.243-2.847-2.847L.53,377.077Zm0,0" transform="translate(0 -359.462)" fill="#fff"/>
+      <path id="Path_18" data-name="Path 18" d="M5.465,9.629,9.629,5.464,4.345.18A.614.614,0,0,0,3.91,0H.615A.615.615,0,0,0,0,.615V3.91a.614.614,0,0,0,.18.435Zm0,0" fill="#fff"/>
+      <path id="Path_19" data-name="Path 19" d="M169.118,3.91V.615A.615.615,0,0,0,168.5,0h-3.295a.614.614,0,0,0-.435.18L154.454,10.5l4.165,4.165,10.32-10.32a.615.615,0,0,0,.18-.435Zm0,0" transform="translate(-148.119 -0.001)" fill="#fff"/>
+      <path id="Path_20" data-name="Path 20" d="M70.081,271.993A1.752,1.752,0,0,0,67.6,274.47l3.6,3.6a1.752,1.752,0,0,0,2.478-2.478Zm0,0" transform="translate(-64.338 -260.345)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
