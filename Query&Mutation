@@ -1,0 +1,110 @@
+//graphql JSON  example
+
+mutation createCostingSheet(
+  $style_number: Int
+  $supplier_name: String
+  $packing_cost: Int
+  $overheads: Int  
+  $fabric_cost:[fabric_composition]
+  $usage:[fabric_composition]
+  $total_fabric:[fabric_composition]
+  $cm_cost:[fabric_composition]
+  $garment_add_ons:[fabric_composition] 
+  $product_trim_cost:[fabric_composition]
+  $total_garment: Int
+  $total_packing_cost: Int
+  $total_overheads: Int
+  $total_cost: Int
+) {
+  createCostingSheet(
+    style_number: $style_number
+    supplier_name: $supplier_name
+    packing_cost: $packing_cost
+    overheads: $overheads  
+    fabric_cost:$fabric_cost
+    usage:$usage
+    total_fabric:$total_fabric
+     cm_cost:$cm_cost
+    garment_add_ons:$garment_add_ons
+    product_trim_cost:$product_trim_cost
+    total_garment: $total_garment
+    total_packing_cost: $total_packing_cost
+    total_overheads: $total_overheads
+    total_cost: $total_cost
+  ) {
+    path
+    message
+    code
+    errors
+  }
+}
+
+///get query with json value
+query costing_sheets {
+  costing_sheets {
+    id
+    style_number
+    supplier_name
+    packing_cost
+    overheads
+    fabric_cost{
+        fabric
+        lining
+    }
+    usage{
+        fabric
+        lining
+    }
+    total_fabric{
+        fabric
+        lining
+    }
+    cm_cost{
+        fabric
+        lining
+    }
+    garment_add_ons{
+        fabric
+        lining
+    }
+    product_trim_cost{
+        fabric
+        lining
+    }
+    total_garment
+    total_packing_cost
+    total_overheads
+    total_cost
+  }
+}
+
+
+========================================================================
+create Api in node js with graphql ,express and  seqalize
+1.first create model and migration
+2.create seeders if you want to set deafult values in the tables 
+3.creatre resolvers
+4.create graphql query or mutation
+
+
+    
+    ////////// local database deatil of ROT///////////////
+       "username": "postgres",
+    "password": "123456",
+    "database": "retailontap_local",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+    
+    
+    /////////////// devlopement database deatil of ROT//////
+    
+"username": "retailontapdb",
+    "password": "Retail55995",
+    "database": "retailontap_development",
+    "host": "retailontap-dev.cndmmlfjibd2.eu-west-2.rds.amazonaws.com",
+    "port": 5432,
+    "dialect": "postgres"
+    
+  
+
