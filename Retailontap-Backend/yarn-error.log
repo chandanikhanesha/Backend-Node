@@ -1,0 +1,59 @@
+Arguments: 
+  /home/wolf/.nvm/versions/node/v13.13.0/bin/node /usr/share/yarn/bin/yarn.js add apollo-server-lambda graphql-tag graphql merge-graphql-schema
+
+PATH: 
+  /home/wolf/.vscode-server/bin/a5d1cc28bb5da32ec67e86cc50f84c67cc690321/bin:/home/wolf/.local/bin:/home/wolf/.nvm/versions/node/v13.13.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/ZeroTier/One/:/mnt/c/xampp/php:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/PuTTY/:/mnt/c/ProgramData/ComposerSetup/bin:/mnt/c/Users/WOLF/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/WOLF/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/PostgreSQL/12/bin:/mnt/c/Users/WOLF/AppData/Roaming/Composer/vendor/bin:/mnt/c/Program Files (x86)/ComposerSetup:/snap/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  13.13.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/merge-graphql-schema: Not found
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66987:18)
+      at Request.self.callback (/usr/share/yarn/lib/cli.js:140748:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:141720:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:141642:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (_stream_readable.js:1201:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  {
+    "name": "retailontap-backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "serverless offline start -r eu-west-2 --noTimeout --port 3000 --host 0.0.0.0",
+      "deploy": "serverless deploy"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@babel/core": "^7.2.2",
+      "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+      "@babel/preset-env": "^7.2.3",
+      "babel-loader": "^8.0.4",
+      "serverless": "^1.35.1",
+      "serverless-offline": "^3.31.3",
+      "serverless-webpack": "^5.2.0",
+      "webpack": "^4.28.2",
+      "webpack-node-externals": "^1.7.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

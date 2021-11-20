@@ -1,0 +1,5 @@
+type Mutation {
+    disconnectExternalUser(
+        id: Int,
+    ): Response  @isAuth
+}

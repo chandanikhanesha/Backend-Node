@@ -1,0 +1,17 @@
+type SearchUser {
+    work_email: String
+}
+
+type SearchOwnerResponse {
+    path: String!
+    message: String!,
+    code: Int!,
+    errors: String,
+    users: [SearchUser]
+}
+
+type Mutation {
+    searchForOwner(
+        work_email: String,
+    ): SearchOwnerResponse @isAuth @hasRole(roles: [Owner])
+}

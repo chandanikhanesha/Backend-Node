@@ -1,0 +1,11 @@
+
+type Mutation {
+    updateQuotation(
+        item_id: Int,
+        unit_price: Int,
+        product_item_id: Int,
+        quantity: Int,
+        is_submited: Boolean,
+    ): Response  @isAuth
+    #@hasType(types: [retailer])
+}

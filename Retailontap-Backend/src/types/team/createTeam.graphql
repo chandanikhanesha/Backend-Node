@@ -1,0 +1,11 @@
+input TeamAdministrators {
+    id: Int,
+}
+
+type Mutation {
+    createTeam(
+        name: String,
+        description: String,
+        administrators: [TeamAdministrators],
+    ): Response  @isAuth @hasRole(roles: [Owner, Administrator])
+}

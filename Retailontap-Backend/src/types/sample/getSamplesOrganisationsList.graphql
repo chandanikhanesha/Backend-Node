@@ -1,0 +1,5 @@
+
+type Mutation {
+    samplesOrganisations(project_id: Int): [Organisation]  @isAuth
+    #@hasType(types: [retailer])
+}

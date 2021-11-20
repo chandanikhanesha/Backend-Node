@@ -1,0 +1,40 @@
+type Type {
+    name: String
+}
+type ReportColumn {
+    id: Int,
+    template_id: Int,
+    order_id: Int,
+}
+
+type ReportImageDetail {
+    id: Int,
+    supplier_name: String,
+    unit: String,
+    image: Image
+}
+type ReportColumns {
+    id: Int,
+    column: ReportColumn,
+    imageDetail: ReportImageDetail
+}
+type ReportPage {
+    id: Int,
+    subject:String,
+    description:String,
+    columns: [ReportColumns]
+}
+type ReportsResponse {
+    id:Int,
+    name:String,
+    coverImage: Image,
+    cover_title:String,
+    file_path:String,
+    user_id:Int,
+    template_id: Int,
+    type: Type,
+    reportPages: [ReportPage]
+}
+type Query {
+    reports: [ReportsResponse]  @isAuth
+}

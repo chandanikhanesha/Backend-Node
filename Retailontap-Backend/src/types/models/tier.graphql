@@ -1,0 +1,8 @@
+type Tier {
+  price_id: String,
+  flat_amount: Int,
+  flat_amount_decimal: String,
+  unit_amount: Int,
+  unit_amount_decimal: String,
+  up_to: Int,
+}

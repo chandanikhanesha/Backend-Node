@@ -1,0 +1,17 @@
+type Mutation {
+    updateOrganisation(
+        id: Int,
+        invite_link_status: Boolean,
+        name: String,
+        description: String,
+        domains_url: String,
+        privacy_url: String,
+        license_count: Int,
+        license_id: Int,
+        country_id: Int,
+        time_zone_id: Int,
+        connected_since: String,
+        update_logo: Boolean,
+        logo: String,
+    ): Response @isAuth @hasRole(roles: [Owner])
+}

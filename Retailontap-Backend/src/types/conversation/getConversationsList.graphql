@@ -1,0 +1,23 @@
+type File{
+    id: Int,
+    thumbnail: String,
+}
+
+type Conversation {
+    id: Int,
+    name: String,
+    subject: String,
+    descriprion: String,
+    channel_id: String,
+    network: String,
+    method: String,
+    supplier_id: String,
+    created_by: Int,
+    hashtags: [Hashtag],
+    participants: [User],
+    files: [File],
+}
+
+type Query {
+    conversations: [Conversation] @isAuth
+}

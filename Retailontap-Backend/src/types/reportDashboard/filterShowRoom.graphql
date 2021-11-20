@@ -1,0 +1,14 @@
+type FilterShowRoom {
+    ordersProductsGroup: [OrdersProductsGroup],
+    openOrdersProductsGroup: [OpenOrdersProductsGroup],
+}
+
+type Mutation {
+    filterShowRoom(
+        filterValue: String,
+        supplierId: Int,
+        filterByDate: String,
+        filterByHashtag: String
+    ): [ShowRoomProducts]  @isAuth
+    #@hasType(types: [retailer])
+}

@@ -1,0 +1,23 @@
+type ExternalOrganisationMember {
+  id: Int,
+  image: Image,
+  first_name: String,
+  last_name: String,
+  work_email: String,
+  last_accessed: String,
+  created_at: String,
+}
+
+type ExternalOrganisationMembersResponse {
+  path: String!
+  message: String!,
+  code: Int!,
+  errors: String,
+  members: [ExternalOrganisationMember]
+}
+
+type Mutation {
+  getExternalOrganisationMembers(
+    id: Int,
+  ): ExternalOrganisationMembersResponse  @isAuth @hasRole(roles: [Owner, Administrator, Standard])
+}

@@ -1,0 +1,19 @@
+scalar Date
+
+type Certificate {
+    id: Int,
+    name: String,
+    file_name: String,
+    is_active:Boolean,
+    expiry_at:Date,
+    created_at:Date,
+}
+
+type CertificateDetails {
+   results: [Certificate]
+   totalRecords: Int
+}
+
+type Query {   
+    certificates(page:Int,pagesize:Int,sortby:String, sortdireaction:String, searchtext:String): CertificateDetails @isAuth @hasRole(roles: [Owner, Administrator])
+}

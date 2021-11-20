@@ -1,0 +1,14 @@
+type CheckAvailableLicenseResponse {
+  path: String!
+  message: String!,
+  code: Int!,
+  errors: String,
+  license: Boolean,
+}
+
+type Mutation {
+  checkAvailableLicense(
+    id: Int,
+    role_id: Int,
+  ): CheckAvailableLicenseResponse  @isAuth @hasRole(roles: [Owner])
+}

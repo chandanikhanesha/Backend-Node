@@ -1,0 +1,13 @@
+type SearchInternalUserResponse {
+  path: String!
+  message: String!,
+  code: Int!,
+  errors: String,
+  searchInternalUser: [InternalUserDetails]
+}
+
+type Mutation {
+  searchInternalUser(
+    searchValue: String,
+  ): SearchInternalUserResponse  @isAuth
+}

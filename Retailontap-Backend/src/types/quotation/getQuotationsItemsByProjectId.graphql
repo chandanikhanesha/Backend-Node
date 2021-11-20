@@ -1,0 +1,10 @@
+type QuotationsByProjectIdResponse {
+    id: Int,
+    items: [QuotationItem]
+}
+type Mutation {
+    quotationsItemsByProjectId(
+        project_id: Int,
+    ): QuotationsByProjectIdResponse  @isAuth
+    #@hasType(types: [retailer])
+}

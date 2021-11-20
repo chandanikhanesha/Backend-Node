@@ -1,0 +1,13 @@
+type TeamResponse{
+    path: String!
+    message: String!,
+    code: Int!,
+    errors: String,
+    team: Team,
+}
+
+type Mutation {
+    getTeam(
+        id: Int,
+    ): TeamResponse  @isAuth
+}

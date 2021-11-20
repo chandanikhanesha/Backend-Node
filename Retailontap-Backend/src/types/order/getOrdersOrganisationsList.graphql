@@ -1,0 +1,5 @@
+
+type Query {
+    ordersOrganisations(project_id: Int): [Organisation]  @isAuth
+    #@hasType(types: [retailer])
+}

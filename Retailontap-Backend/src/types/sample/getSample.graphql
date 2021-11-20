@@ -1,0 +1,4 @@
+type Query {
+    sample(id: Int, project_id: Int): SampleResponse  @isAuth
+    #@hasType(types: [retailer])
+}

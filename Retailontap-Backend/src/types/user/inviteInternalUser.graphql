@@ -1,0 +1,14 @@
+type Email {
+  work_email:String,
+}
+
+input EmailInput {
+  work_email: String
+}
+
+type Mutation {
+  inviteInternalUser(
+    emails: [EmailInput],
+    role_id: Int
+  ): Response  @isAuth @hasRole(roles: [Owner, Administrator])
+}

@@ -1,0 +1,102 @@
+type OrderAndQuantityByDate{
+    quantity: String,
+    order: String,
+    date:String
+}
+type OrderAndQuantityByName{
+    quantity: String,
+    order: String,
+    name:String
+}
+type ProductsGroupCounts {
+    total_order: String,
+    total_quantity: String,
+    total_price: String
+}
+type OrdersProductsGroup {
+    id: Int,
+    delivery_date: String,
+    project: OrderProject,
+    item: OrderQuotationItem
+}
+type OpenOrdersProductsGroup {
+    id: Int,
+    created_at: String,
+    project: OrderProject,
+    item: OrderQuotationItem
+}
+type ProductsGroup{
+    ordersProductsGroupCounts: ProductsGroupCounts,
+    ordersProductsGroup: [OrdersProductsGroup],
+    openOrdersProductsGroup: [OpenOrdersProductsGroup],
+}
+type ProjectNetworkCount {
+    count: String,
+    network: String,
+}
+type SampleQuotationStatus {
+    requested: String,
+    received: String,
+}
+type OrderStatus {
+    placed: String,
+}
+type ProjectNegotiationsStatus {
+    sample: SampleQuotationStatus,
+    quotation: SampleQuotationStatus,
+    order: OrderStatus
+}
+type ReportDashboardProjects {
+    id: Int,
+    name: String,
+    start_date: String
+    end_date: String
+    budget: String,
+    status: String,
+    creator_id:Int,
+    creator_name:String,
+    creator_organisation_name:String,
+    supplier_id:Int,
+    supplier_name:String,
+    supplier_organisation_name:String
+}
+type ReportDashboardProject {
+    projectNetworkCount:[ProjectNetworkCount],
+    projectNegotiationsStatus: ProjectNegotiationsStatus
+    projects: [ReportDashboardProjects]
+}
+
+type showRoomCountInfo {
+    views: String,
+    requested: String,
+    converted: String,
+    total_items:String
+}
+type ShowRoomProducts {
+    id:Int,
+    views: String,
+    requested: String,
+    orders_generated: String,
+    thumbnail: String
+}
+type ReportDashboardShowRoom {
+    showRoomCountInfo: showRoomCountInfo,
+    products: [ShowRoomProducts]
+}
+
+type ReportDashboardResponse {
+    orders: [OrderResponse],
+    orderAndQuantityCompare: [OrderAndQuantityByDate],
+    orderBeDelivered: [OrderAndQuantityByDate],
+    circleSupplierByOrderAndByQuantity: [OrderAndQuantityByName],
+    supplierByOrderAndByQuantity: [OrderAndQuantityByName],
+    countryByOrderAndByQuantity: [OrderAndQuantityByName],
+    productsGroup: ProductsGroup,
+    samples: [SampleResponse],
+    project: ReportDashboardProject,
+    showRoom: ReportDashboardShowRoom,
+}
+type Query {
+    reportDashboardInfo: ReportDashboardResponse  @isAuth
+    #@hasType(types: [retailer])
+}

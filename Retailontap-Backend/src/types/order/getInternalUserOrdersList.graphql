@@ -1,0 +1,32 @@
+type OrderUser {
+    organisation: [Organisation],
+}
+type OrderQuotation {
+    retailer: OrderUser,
+    supplier: OrderUser,
+}
+type QuotationProductItem {
+    unit_price: String
+}
+type OrderQuotationItem{
+    quantity: Int,
+    quotation: OrderQuotation,
+    productItem: QuotationProductItem
+}
+type OrderResponse {
+    id: Int,
+    delivery_date: String,
+    created_at: String,
+    item: OrderQuotationItem
+}
+type GetInternalUserOrdersResponse {
+    path: String,
+    message: String,
+    code: Int,
+    errors: String,
+    orders: [OrderResponse]
+}
+type Query {
+    getInternalUserOrders(userId:Int): GetInternalUserOrdersResponse  @isAuth
+    #@hasType(types: [retailer])
+}

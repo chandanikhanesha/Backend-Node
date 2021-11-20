@@ -1,0 +1,13 @@
+type SearchTeam {
+    path: String!
+    message: String!,
+    code: Int!,
+    errors: String,
+    teams: [Team]
+}
+
+type Mutation {
+    searchTeam(
+        searchValue: String,
+    ): SearchTeam  @isAuth
+}

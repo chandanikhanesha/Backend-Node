@@ -1,0 +1,9 @@
+input TeamAdministrator {
+    id: Int,
+}
+type Mutation {
+    updateTeamAdministrator(
+        id: Int,
+        administrators:[TeamAdministrator],
+    ): Response  @isAuth @hasRole(roles: [Owner, Administrator])
+}

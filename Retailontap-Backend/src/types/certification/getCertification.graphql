@@ -1,0 +1,23 @@
+scalar Date
+
+type CertificateDetails {
+    id: Int,
+    name: String,
+    file_name: String,
+    is_active:Boolean,
+    expiry_at:Date,
+}
+
+type CertificationResponse {
+    path: String!
+    message: String!,
+    code: Int!,
+    errors: String,
+    certificate: CertificateDetails
+}
+
+type Mutation {
+    getCertification(
+        id: Int,
+    ): CertificationResponse @isAuth @hasRole(roles: [Owner, Administrator])
+}

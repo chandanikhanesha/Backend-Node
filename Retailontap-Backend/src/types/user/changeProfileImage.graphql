@@ -1,0 +1,5 @@
+type Mutation {
+  changeProfileImage(
+    image: String,
+  ): Response  @isAuth
+}

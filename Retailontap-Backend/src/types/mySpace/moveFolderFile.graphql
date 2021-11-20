@@ -1,0 +1,8 @@
+
+type Mutation {
+    moveFolderFile(
+        newKey: String,
+        oldKey: String,
+    ): Response @isAuth
+    #@hasRole(roles: [Owner])
+}

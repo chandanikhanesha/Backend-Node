@@ -1,0 +1,11 @@
+type OrgOwner {
+    id: String,
+    first_name: String,
+    last_name: String,
+    work_email: String,
+    image: Image,
+}
+
+type Query {
+    owner: OrgOwner @isAuth
+}

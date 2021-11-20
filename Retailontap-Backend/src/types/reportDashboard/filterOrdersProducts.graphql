@@ -1,0 +1,12 @@
+type FilterOrdersProductsResponse {
+    ordersProductsGroup: [OrdersProductsGroup],
+    openOrdersProductsGroup: [OpenOrdersProductsGroup],
+}
+
+type Mutation {
+    filterOrdersProducts(
+        supplierOrRetailerId:Int,
+        hashtagId: Int,
+    ): FilterOrdersProductsResponse  @isAuth
+    #@hasType(types: [retailer])
+}

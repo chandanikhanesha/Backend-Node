@@ -1,0 +1,5 @@
+
+type Query {
+  supplierExternalOrganisations: ExternalOrganisationResponse  @isAuth
+  #@hasRole(roles: [Owner, Administrator])
+}

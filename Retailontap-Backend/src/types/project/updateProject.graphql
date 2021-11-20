@@ -1,0 +1,19 @@
+type Mutation {
+    updateProject(
+        id:Int,
+        name: String,
+        description: String,
+        notes: String,
+        start_date: String,
+        end_date: String,
+        unit_cost: String,
+        markup: String,
+        retail_price: String,
+        budget: String,
+        materials: [ProjectMaterial],
+        images: [InputProjectImage],
+        internalUsers: [ConversationUser],
+        externalUsers: [ConversationUser],
+        hashtags: [ProjectHashtag],
+    ): Response @isAuth @hasRole(roles: [Owner, Administrator]) @hasType(types: [retailer])
+}

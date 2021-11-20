@@ -1,0 +1,17 @@
+type GroupUser{
+    id: Int,
+    first_name: String,
+    last_name: String,
+    image: ProfileImage,
+}
+
+type Group {
+    id: Int,
+    name: String,
+    group_type: String,
+    users: [GroupUser]
+}
+
+type Query {
+    groups: [Group] @hasRole(roles: [Owner, Administrator, Standard]) @hasType(types: [retailer])
+}

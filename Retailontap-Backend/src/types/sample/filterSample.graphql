@@ -1,0 +1,10 @@
+
+type Mutation {
+    filterSample(
+        retailerOrSupplierId: Int,
+        project_id: Int,
+        date_start: String,
+        date_end: String,
+    ): [SampleResponse]
+    #@isAuth @hasType(types: [retailer])
+}

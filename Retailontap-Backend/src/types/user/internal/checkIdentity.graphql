@@ -1,0 +1,19 @@
+type Identity {
+  work_email: String,
+  license: Boolean,
+  message: String,
+}
+
+type CheckIdentityResponse {
+  path: String!
+  message: String!,
+  code: Int!,
+  errors: String,
+  identity: Identity
+}
+
+type Mutation {
+  checkIdentity(
+    work_email: String,
+  ): CheckIdentityResponse  @isAuth @hasRole(roles: [Owner, Administrator])
+}

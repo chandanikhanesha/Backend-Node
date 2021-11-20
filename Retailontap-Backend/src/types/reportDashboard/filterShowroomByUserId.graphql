@@ -1,0 +1,7 @@
+type Mutation {
+    filterShowRoomByUserId(
+        filterValue: String,
+        id: Int
+    ): [ShowRoomProducts]  @isAuth
+    #@hasType(types: [retailer])
+}

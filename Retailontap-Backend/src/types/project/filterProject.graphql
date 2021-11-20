@@ -1,0 +1,8 @@
+type Mutation {
+    filterProject(
+        retailerOrSupplierId: Int,        
+        date_added: String,
+        hashtags: [ProjectHashtag],
+        product_company_id: Int
+    ): [ProjectInfo] @isAuth
+}

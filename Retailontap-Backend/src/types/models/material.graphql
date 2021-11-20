@@ -1,0 +1,4 @@
+type Material {
+  id: Int,
+  name: String,
+}

@@ -1,0 +1,14 @@
+type ProjectFileDetails {
+    id: Int,
+    thumbnail: String   
+}
+
+type ProjectFilesResponse {
+   files: [ProjectFileDetails]   
+}
+
+type Query {
+    projectFiles(
+        id: Int
+    ): ProjectFilesResponse @isAuth
+}

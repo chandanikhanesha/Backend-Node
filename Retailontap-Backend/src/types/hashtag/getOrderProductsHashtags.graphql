@@ -1,0 +1,3 @@
+type Query {
+    orderProductsHashtags(project_id: Int): [Hashtag] @isAuth
+}

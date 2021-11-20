@@ -1,0 +1,8 @@
+type MySpace {
+  id: Int,
+  type: String,
+  name: String,
+  path: String,
+  parent_id: Int,
+  user_id: Int,
+}

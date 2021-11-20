@@ -1,0 +1,27 @@
+type Recurring {
+    interval:String,
+}
+
+type Discount {
+    name: String,
+    description: String,
+    price_id: String,
+    coupon_id: String,
+}
+
+type Price {
+    id: Int,
+    price_id: String,
+    license_id: String,
+    currency: String,
+    livemode: Boolean,
+    active: Boolean,
+    billing_scheme: String,
+    tiers_mode: String,
+    unit_amount: Int,
+    unit_amount_decimal:String,
+    interval: String,
+    discount_name: String,
+    coupon_id: String,
+    tiers: [Tier],
+}

@@ -1,0 +1,66 @@
+scalar Date
+
+type Organisation {
+    id:Int,
+    name:String
+}
+
+type Image {
+    id:Int,
+    thumbnail:String
+}
+
+type Supplier {
+    id:Int,
+    first_name:String,
+    last_name:String,
+    organisation:[Organisation]
+}
+
+type Retailer {
+    id:Int,
+    first_name:String,
+    last_name:String,
+    organisation:[Organisation]
+}
+
+type Product {
+    id:Int,
+    name:String,
+    description:String,
+    images:[Image],
+    organisation:Organisation
+}
+
+type ProjectData {
+    id: Int,
+    name: String,
+    budget: String,
+    product:Product    
+}
+
+type SampleData {
+    id: Int,
+    received_date: String,
+    track_number: String,
+    is_submited:Boolean,
+    is_show:Boolean,
+    created_at:Date,
+    project:ProjectData,
+    retailer:Retailer,
+    supplier:Supplier
+}
+
+type GetSampleDetails {
+  path: String!
+  message: String!,
+  code: Int!,
+  errors: String,
+  sampledetails: [SampleData]
+}
+
+type Mutation {
+    externalUserSampleDetails(
+        id: Int,
+    ): GetSampleDetails @isAuth
+}

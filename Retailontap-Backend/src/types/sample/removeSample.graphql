@@ -1,0 +1,6 @@
+
+type Mutation {
+    removeSample(
+        id: Int,
+    ): Response  @isAuth @hasType(types: [retailer])
+}

@@ -1,0 +1,5 @@
+type Mutation {
+  deleteUserForTest(
+    work_email:String,
+  ): Response
+}

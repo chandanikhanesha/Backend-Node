@@ -1,0 +1,21 @@
+type Token {
+  accessToken: String,
+  refreshToken: String,
+}
+type LoginResponse{
+  path: String
+  message: String,
+  code: Int,
+  errors: String,
+  token: Token,
+}
+
+type Mutation {
+  userLogInByGoogleAuth(
+    work_email:String,
+    password: String,
+    googleCode: String,
+    device_type: String,
+    device_id: String,
+  ): LoginResponse
+}

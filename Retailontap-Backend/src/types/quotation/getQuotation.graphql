@@ -1,0 +1,29 @@
+type QuotationProduct {
+    id:Int,
+    name: String,
+    description: String,
+}
+
+type QuotationProject {
+    product: QuotationProduct,
+}
+type QuotationItem {
+    id: Int,
+    quotation_id: Int,
+    quantity: Int,
+    productItem: ProductItem
+}
+type QuotationResponse {
+    id: Int,
+    delivery_date: String,
+    transportatio_type: String,
+    project: QuotationProject,
+    items: [QuotationItem],
+    retailer: QuotationUser,
+    supplier: QuotationUser,
+}
+
+type Query {
+    quotation(id:Int): QuotationResponse  @isAuth
+    #@hasType(types: [retailer])
+}

@@ -1,0 +1,6 @@
+type Mutation {
+  updateTimeAndLocale(
+    language_id: Int,
+    time_zone_id: Int,
+  ): Response  @isAuth
+}

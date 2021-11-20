@@ -1,0 +1,10 @@
+input AssignUser{
+    id: Int,
+}
+
+type Mutation {
+    assignUsersToGroup(
+        id: Int,
+        users: [AssignUser],
+    ): Response  @isAuth @hasRole(roles: [Owner, Administrator]) @hasType(types: [retailer])
+}

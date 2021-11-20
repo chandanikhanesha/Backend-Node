@@ -1,0 +1,12 @@
+type Mutation {
+    sendEnquiry(
+       name:String,
+       company:String,
+       mobile:String,
+       work_email:String,
+       phone:String,
+       company_size:String,
+       country:String,  
+       message:String,
+    ): Response
+}

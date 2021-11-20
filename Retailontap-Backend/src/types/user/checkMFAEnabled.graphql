@@ -1,0 +1,9 @@
+type Query {
+  bye: String
+}
+
+type Mutation {
+  checkMFAEnabled(
+    work_email: String
+  ): Response
+}

@@ -1,0 +1,43 @@
+type SampleProduct {
+    id: Int,
+    description: String,
+    name: String,
+    images: [Image],
+}
+type SampleProject {
+    id: Int,
+    name: String,
+    images: [Image],
+    product: SampleProduct
+}
+type SampleOrganisation {
+    id: Int,
+    name: String,
+    country: SampleCountry
+}
+type SampleCountry {
+    id: Int,
+    name: String,
+}
+type SampleUser {
+    id: Int,
+    first_name: String,
+    last_name: String,
+    work_email: String,
+    image: ProfileImage,
+    organisation: [SampleOrganisation],
+}
+type SampleResponse {
+    id: Int,
+    received_date: String,
+    track_number: String,
+    project: SampleProject,
+    retailer: SampleUser,
+    supplier: SampleUser,
+    sample_image: Image,
+}
+
+type Query {
+    samples(project_id:Int): [SampleResponse]  @isAuth
+    #@hasType(types: [retailer])
+}

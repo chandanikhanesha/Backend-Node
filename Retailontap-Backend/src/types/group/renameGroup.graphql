@@ -1,0 +1,6 @@
+type Mutation {
+    renameGroup(
+        id: Int,
+        name: String,
+    ): Response  @isAuth @hasRole(roles: [Owner, Administrator]) @hasType(types: [retailer])
+}

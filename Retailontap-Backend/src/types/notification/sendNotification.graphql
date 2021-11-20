@@ -1,0 +1,7 @@
+
+type Mutation {
+    sendNotification(
+        name: String,
+        message: String,
+    ): Response @isAuth
+}

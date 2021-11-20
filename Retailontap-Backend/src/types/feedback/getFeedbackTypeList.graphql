@@ -1,0 +1,8 @@
+type Feedback {
+    id: Int,
+    name: String
+}
+
+type Query {
+    FeedbackTypes: [Feedback] 
+}

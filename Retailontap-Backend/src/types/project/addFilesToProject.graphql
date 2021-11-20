@@ -1,0 +1,11 @@
+input FileContent {
+    file_name: String    
+}
+
+type Mutation {
+    addFilesToProject(
+        id:Int,
+        action:String
+        files: [FileContent],        
+    ): Response @isAuth @hasRole(roles: [Owner, Administrator]) @hasType(types: [retailer])
+}

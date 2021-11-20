@@ -1,0 +1,14 @@
+type TimeZone {
+  id: Int,
+  name: String,
+  country_id: Int,
+  utc_offset: Int,
+  utc_offset_str: String,
+  dst_offset: Int,
+  dst_offset_str: String,
+  alias_of: String,
+}
+
+type Query {
+    timeZones: [TimeZone]
+}

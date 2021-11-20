@@ -1,0 +1,7 @@
+
+type Mutation {
+    addTeamMember(
+        user_id: Int,
+        team_id: Int,
+    ): Response  @isAuth @hasRole(roles: [Owner, Administrator])
+}

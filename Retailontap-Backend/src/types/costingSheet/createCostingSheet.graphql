@@ -1,0 +1,27 @@
+input fabric_composition {
+  fabric: Int = 0
+  lining: Int = 0
+}
+
+type Mutation {
+  createCostingSheet(
+    project_id: Int
+    style_number: Int
+    supplier_name: String
+    packing_cost: Int
+    overheads: Int
+    fabric_cost: [fabric_composition]
+    usage: [fabric_composition]
+    total_fabric: [fabric_composition]
+    cm_cost: [fabric_composition]
+    garment_add_ons: [fabric_composition]
+    product_trim_cost: [fabric_composition]
+    total_garment: Int
+    total_packing_cost: Int
+    total_overheads: Int
+    total_cost: Int
+  ): Response
+    @isAuth
+    @hasRole(roles: [Owner, Administrator])
+    @hasType(types: [supplier])
+}

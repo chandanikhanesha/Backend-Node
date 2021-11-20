@@ -1,0 +1,6 @@
+input PageIds {
+    id: Int,
+}
+type Mutation {
+    deleteReportPage(report_id: Int, page_ids: [PageIds]): Response  @isAuth
+}

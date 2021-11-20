@@ -1,0 +1,7 @@
+
+type Mutation {
+    deleteFolderFile(
+        key: String,
+    ): Response @isAuth
+    #@hasRole(roles: [Owner])
+}

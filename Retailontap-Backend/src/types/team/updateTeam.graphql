@@ -1,0 +1,8 @@
+
+type Mutation {
+    updateTeam(
+        id: Int,
+        name: String,
+        description: String,
+    ): Response  @isAuth
+}

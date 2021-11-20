@@ -1,0 +1,4 @@
+
+type Mutation {
+    deleteReport(id:Int): Response  @isAuth
+}

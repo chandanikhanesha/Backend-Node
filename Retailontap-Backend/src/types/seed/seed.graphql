@@ -1,0 +1,7 @@
+type Seed {
+    status: String
+}
+
+type Query {
+    seed: Seed
+}

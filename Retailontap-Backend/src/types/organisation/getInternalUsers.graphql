@@ -1,0 +1,15 @@
+type InternalUsers {
+    id: Int,
+    first_name: String,
+    last_name: String,
+    work_email: String,
+    image: ProfileImage,
+    role: [Role],
+    activated:Boolean,
+    last_accessed: String,
+    created_at: String,
+}
+
+type Query {
+    internalUsers: [InternalUsers] @isAuth
+}

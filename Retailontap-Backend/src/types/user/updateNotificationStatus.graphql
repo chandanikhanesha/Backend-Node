@@ -1,0 +1,5 @@
+type Mutation {
+    updateNotificationStatus(
+    is_read:Boolean
+    ):Response @isAuth
+}

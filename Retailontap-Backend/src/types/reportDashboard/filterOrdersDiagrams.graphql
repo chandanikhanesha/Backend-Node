@@ -1,0 +1,14 @@
+type FilterOrderDiagramsResponse {
+    orderAndQuantityCompare: [OrderAndQuantityByDate],
+    orderBeDelivered: [OrderAndQuantityByDate],
+    circleSupplierByOrderAndByQuantity: [OrderAndQuantityByName],
+}
+type Mutation {
+    filterOrdersDiagrams(
+        supplierOrRetailerId:Int,
+        hashtagId: Int,
+        date_start: String,
+        date_end: String,
+    ): FilterOrderDiagramsResponse  @isAuth
+    #@hasType(types: [retailer])
+}

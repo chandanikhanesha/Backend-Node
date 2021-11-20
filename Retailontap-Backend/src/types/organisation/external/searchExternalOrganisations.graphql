@@ -1,0 +1,13 @@
+type SearchExternalOrganisations {
+    path: String!
+    message: String!,
+    code: Int!,
+    errors: String,
+    searchExternalOrganisations: [ExternalOrganisations]
+}
+
+type Mutation {
+    searchExternalOrganisations(
+        searchValue: String,
+    ): SearchExternalOrganisations  @isAuth
+}

@@ -1,0 +1,10 @@
+type Query {
+  bye: String
+}
+
+type Mutation {
+  userVerifyCode(
+    work_email:String,
+    activation_code: String
+  ): Response
+}

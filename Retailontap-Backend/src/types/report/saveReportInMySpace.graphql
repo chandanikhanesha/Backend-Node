@@ -1,0 +1,7 @@
+
+type Mutation {
+    saveReportInMySpace(
+        key: String,
+        files:  [CreateFileName],
+    ): Response  @isAuth
+}

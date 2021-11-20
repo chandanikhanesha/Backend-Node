@@ -1,0 +1,27 @@
+type QuotationsProject {
+    id:Int,
+    name: String,
+    images: [Image]
+}
+type QuotationOrganisation {
+    id:Int,
+    name:String
+}
+type QuotationUser {
+    organisation: [Organisation]
+}
+type QuotationsResponse {
+    id: Int,
+    created_at: String,
+    project: QuotationsProject,
+    retailer: QuotationUser,
+    supplier: QuotationUser,
+}
+type Quotations {
+    totalLength: Int,
+    quotations: [QuotationsResponse]
+}
+type Query {
+    quotations(project_id: Int): Quotations  @isAuth
+    #@hasType(types: [retailer])
+}

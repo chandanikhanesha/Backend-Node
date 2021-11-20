@@ -1,0 +1,10 @@
+type RefreshToken {
+    path: String!
+    message: String!,
+    code: Int!,
+    errors: String,
+    token: Token,
+}
+type Mutation {
+    refreshToken(refreshToken: String, id: Int): RefreshToken
+}

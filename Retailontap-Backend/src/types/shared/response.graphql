@@ -1,0 +1,7 @@
+
+type Response {
+  path: String!,
+  message: String!,
+  code: Int!,
+  errors: String
+}

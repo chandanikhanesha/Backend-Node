@@ -1,0 +1,5 @@
+type Mutation {
+    connectExternalUsers(
+        emails: [EmailInput],
+    ): Response @isAuth
+}

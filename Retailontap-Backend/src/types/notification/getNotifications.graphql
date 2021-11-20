@@ -1,0 +1,12 @@
+type Notification {
+    id: Int,
+    name: String
+}
+type GetNotifications {
+    is_on: Boolean,
+    notification: Notification
+}
+type Query {
+    notifications: [GetNotifications] @isAuth
+    #@hasRole(roles: [Owner])
+}

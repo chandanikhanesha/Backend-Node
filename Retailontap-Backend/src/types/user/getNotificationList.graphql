@@ -1,0 +1,22 @@
+type Notification {
+    id: Int,
+    user_id:Int,
+    first_name: String,
+    last_name: String,
+    short_name:String,
+    invited_by:Int,
+    message:String,
+    is_active:Boolean,
+    is_sent:Boolean,
+    created_at:Date,
+}
+
+type Notiifications {
+   newNotifications: [Notification],
+   todayNotifications: [Notification],
+   pastNotifications: [Notification],
+}
+
+type Query {
+  notificationlist: Notiifications @isAuth
+}

@@ -1,0 +1,5 @@
+type Mutation {
+  resendInviteToInternalUser(
+    work_email: String,
+  ): Response  @isAuth @hasRole(roles: [Owner])
+}

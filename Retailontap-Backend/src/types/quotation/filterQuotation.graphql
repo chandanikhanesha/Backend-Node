@@ -1,0 +1,12 @@
+
+type Mutation {
+    filterQuotation(
+        retailerOrSupplierid: Int,
+        date_start: String,
+        date_end: String,
+        hashtagsIds: [FilterParams],
+        total_cost: Boolean,
+        project_id: Int,
+    ): Quotations
+    #@isAuth @hasType(types: [retailer])
+}

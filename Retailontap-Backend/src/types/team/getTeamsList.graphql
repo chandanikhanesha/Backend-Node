@@ -1,0 +1,10 @@
+type Team {
+    id: Int,
+    name: String,
+    description: String,
+    members: [User]
+}
+
+type Query {
+    teams: [Team] @isAuth
+}

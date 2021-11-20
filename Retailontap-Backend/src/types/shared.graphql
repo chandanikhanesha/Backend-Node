@@ -1,0 +1,20 @@
+directive @isAuth on FIELD_DEFINITION
+directive @hasRole(roles: [UserRole]) on FIELD | FIELD_DEFINITION
+directive @hasType(types: [OrganisationType]) on FIELD | FIELD_DEFINITION
+
+enum UserRole {
+  Owner,
+  Administrator
+  Standard,
+  Stakeholder
+}
+
+enum OrganisationType {
+  retailer,
+  supplier
+}
+
+type Error {
+  path: String!
+  message: String!
+}

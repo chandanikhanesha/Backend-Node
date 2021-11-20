@@ -1,0 +1,14 @@
+type ReportResponse {
+    path: String!
+    message: String!,
+    code: Int!,
+    errors: String,
+    report_id: Int
+}
+
+type Mutation {
+    createReport(
+        name: String,
+        type_id: Int,
+    ): ReportResponse  @isAuth
+}

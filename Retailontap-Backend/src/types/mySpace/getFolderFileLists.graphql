@@ -1,0 +1,16 @@
+type FolderFileLists {
+    Prefix: String
+}
+type GetFolderFileListsResponse {
+    path: String!,
+    message: String!,
+    code: Int!,
+    errors: String,
+    folderFileLists : [FolderFileLists]
+}
+type Mutation {
+    getFolderFileLists(
+        key: String,
+    ): GetFolderFileListsResponse @isAuth
+    #@hasRole(roles: [Owner])
+}

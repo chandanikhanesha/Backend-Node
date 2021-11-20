@@ -1,0 +1,11 @@
+input ExternalUserHashtag {
+  id: Int,
+  name: String,
+}
+
+type Mutation {
+  addHashtagsToExternalUser(
+    externalUserId: Int,
+    hashtags: [ExternalUserHashtag],
+  ): Response  @isAuth
+}

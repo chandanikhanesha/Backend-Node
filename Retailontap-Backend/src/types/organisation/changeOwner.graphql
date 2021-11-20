@@ -1,0 +1,5 @@
+type Mutation {
+    changeOwner(
+        work_email: String,
+    ): Response @isAuth @hasRole(roles: [Owner])
+}

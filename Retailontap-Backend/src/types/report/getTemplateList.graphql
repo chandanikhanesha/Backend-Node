@@ -1,0 +1,15 @@
+
+type ColumnsType {
+    id: Int,
+    template_id: Int,
+    order_id: Int,
+}
+type ReportTemplateResponse {
+    id: Int,
+    name: String,
+    columns: [ColumnsType]
+}
+
+type Query {
+    reportTemplates: [ReportTemplateResponse]  @isAuth
+}

@@ -1,0 +1,8 @@
+
+type Mutation {
+    updateOrder(
+        delivery_date: String,
+        id: Int,
+    ): Response  @isAuth
+    #@hasType(types: [retailer])
+}

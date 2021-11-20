@@ -1,0 +1,13 @@
+type DeleteInternalUserResponse {
+  path: String!
+  message: String!,
+  code: Int!,
+  errors: String,
+}
+
+type Mutation {
+  deleteInternalUser(
+    id: Int,
+    assign_to: Int,
+  ): DeleteInternalUserResponse  @isAuth @hasRole(roles: [Owner])
+}

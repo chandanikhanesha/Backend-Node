@@ -1,0 +1,13 @@
+type GetExternalUser {
+  path: String!
+  message: String!,
+  code: Int!,
+  errors: String,
+  user: ExternalUsers
+}
+
+type Mutation {
+  getExternalUser(
+    id: Int,
+  ): GetExternalUser  @isAuth
+}

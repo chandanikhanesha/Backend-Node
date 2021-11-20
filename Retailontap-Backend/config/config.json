@@ -1,0 +1,35 @@
+{
+  "local": {
+    "username": "retailontapdb",
+    "password": "Retail55995",
+    "database": "retailontap_development",
+    "host": "retailontap-dev.cndmmlfjibd2.eu-west-2.rds.amazonaws.com",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+
+  "development": {
+    "username": "retailontapdb",
+    "password": "Retail55995",
+    "database": "retailontap_development",
+    "host": "retailontap-dev.cndmmlfjibd2.eu-west-2.rds.amazonaws.com",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "postgres",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "postgres",
+    "port": 5432,
+    "dialect": "postgres"
+  }
+}

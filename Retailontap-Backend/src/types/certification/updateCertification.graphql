@@ -1,0 +1,12 @@
+scalar Date
+
+type Mutation {
+    updateCertification(
+       id:Int,      
+       name:String,
+       isFileUploaded:Boolean,
+       certificate:String,
+       file_type:String,
+       expiry_at:Date,
+    ): Response @isAuth @hasRole(roles: [Owner, Administrator])
+}

@@ -1,0 +1,5 @@
+type Mutation {
+    deleteGroup(
+        id: Int,
+    ): Response  @isAuth @hasRole(roles: [Owner, Administrator]) @hasType(types: [retailer])
+}

@@ -1,0 +1,14 @@
+type Query {
+  bye: String
+}
+
+type Mutation {
+  userInvite(
+    first_name: String,
+    last_name: String,
+    work_email: String,
+    company: String,
+    phone_number: String,
+    invited_by: String
+  ): [Error]
+}

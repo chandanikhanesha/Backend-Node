@@ -1,0 +1,24 @@
+type ChargesData {
+  payment_method_details: PaymentMethodDetail,
+  billing_details: BillingDetails,
+}
+
+type Charges {
+  data: [ChargesData]
+}
+
+type Payment {
+  id: String,
+  status: String,
+  description: String,
+  currency: String,
+  amount: Int,
+  amount_capturable: Int,
+  amount_received: Int,
+  invoice: String,
+  confirmation_method: String,
+  created: Int,
+  receipt_number:  String,
+  customer: String,
+  charges: Charges,
+}

@@ -1,0 +1,30 @@
+type Fabric_composition {
+  fabric: Int
+  lining: Int
+}
+
+type CostingSheet {
+  id: Int
+  project_id: Int
+  style_number: Int
+  supplier_name: String
+  packing_cost: Int
+  overheads: Int
+  fabric_cost: [Fabric_composition]
+  usage: [Fabric_composition]
+  total_fabric: [Fabric_composition]
+  cm_cost: [Fabric_composition]
+  garment_add_ons: [Fabric_composition]
+  product_trim_cost: [Fabric_composition]
+  total_garment: Int
+  total_packing_cost: Int
+  total_overheads: Int
+  total_cost: Int
+}
+
+type Query {
+  costing_sheets: [CostingSheet]
+    @isAuth
+    @hasRole(roles: [Owner, Administrator])
+    @hasType(types: [supplier])
+}

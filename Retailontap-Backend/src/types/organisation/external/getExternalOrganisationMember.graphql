@@ -1,0 +1,13 @@
+type ExternalOrganisationMemberResponse {
+  path: String!
+  message: String!,
+  code: Int!,
+  errors: String,
+  member: ExternalOrganisationMember
+}
+
+type Mutation {
+  getExternalOrganisationMember(
+    id: Int,
+  ): ExternalOrganisationMemberResponse  @isAuth @hasRole(roles: [Owner, Administrator, Standard])
+}

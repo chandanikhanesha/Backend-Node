@@ -1,0 +1,5 @@
+type Mutation {
+    disconnectExternalOrganisation(
+        id: Int,
+    ): Response  @isAuth @hasRole(roles: [Owner, Administrator])
+}

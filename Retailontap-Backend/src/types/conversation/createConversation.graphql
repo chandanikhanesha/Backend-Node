@@ -1,0 +1,21 @@
+input InputConversationFile{
+    file: String,
+}
+
+input ConversationHashtag {
+    id: Int,
+    name: String,
+}
+
+type Mutation {
+    createConversation(
+        subject: String,
+        description: String,
+        product_id: Int,
+        report_id: Int,
+        internalUsers: [ConversationUser],
+        externalUser: ConversationUser,
+        files: [InputConversationFile],
+        hashtags: [ConversationHashtag],
+    ): Response  @isAuth @hasRole(roles: [Owner, Administrator]) @hasType(types: [retailer])
+}

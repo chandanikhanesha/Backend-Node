@@ -1,0 +1,23 @@
+type Image {
+    id: Int,
+    thumbnail: String,
+}
+
+type Colour {
+    id: Int,
+    name: String,
+}
+
+
+type Product {
+    id: Int,
+    name: String,
+    description: String,
+    colours: [Colour],
+    materials: [Material],
+    hashtags: [Hashtag],
+    images: [Image],
+}
+type Query {
+    products: [Product]
+}

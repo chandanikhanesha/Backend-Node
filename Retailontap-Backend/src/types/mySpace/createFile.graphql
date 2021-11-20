@@ -1,0 +1,19 @@
+
+input CreateFileName {
+    name: String,
+    file: String
+}
+type CreateFileResponse {
+    path: String!,
+    message: String!,
+    code: Int!,
+    errors: String,
+    files : [Files]
+}
+type Mutation {
+    createFile(
+        files: [CreateFileName],
+        key: String,
+    ): CreateFileResponse @isAuth
+    #@hasRole(roles: [Owner])
+}

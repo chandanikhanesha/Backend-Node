@@ -1,0 +1,3 @@
+type Query {
+  badge_count: Int @isAuth
+}

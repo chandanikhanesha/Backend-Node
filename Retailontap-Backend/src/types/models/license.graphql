@@ -1,0 +1,9 @@
+type License {
+  id: Int,
+  license_id: String,
+  name: String,
+  description: String,
+  active: Boolean
+  livemode: Boolean
+  prices: [Price],
+}

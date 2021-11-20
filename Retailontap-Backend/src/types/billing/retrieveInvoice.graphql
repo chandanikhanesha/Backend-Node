@@ -1,0 +1,62 @@
+type Plan {
+  id:String,
+  quantity:Int,
+  amount:Int,
+  amount_decimal:String,
+  currency:String,
+  interval:String,
+  interval_count:Int
+}
+
+type Data {
+  id:String,
+  amount:Int,
+  quantity:Int,
+  currency:String,
+  description: String,
+  subscription:String,
+  subscription_item:String,
+  plan:Plan
+}
+
+type Lines {
+  data : [Data]
+}
+
+type InvoiceData {
+  id: String,
+  account_country:String,
+  account_name:String,
+  amount_due:Int,
+  amount_paid:Int,
+  amount_remaining:Int, 
+  status:String,
+  description:String,
+  currency:String,
+  paid:Boolean,
+  created:Int,
+  billing_reason:String,
+  customer_address:String,
+  customer_email:String,
+  customer_name:String,
+  customer_phone:String,
+  total:Int,
+  subtotal:Int,
+  lines:Lines,
+  number:String,
+  receipt_number:String
+}
+
+type RetrieveInvoiceResponse {
+    path: String!
+    message: String!,
+    code: Int!,
+    errors: String,
+    invoice: InvoiceData
+}
+
+type Mutation {
+    retrieveInvoice(
+        invoice_id: String,
+    ): RetrieveInvoiceResponse @isAuth @hasRole(roles: [Owner])
+}

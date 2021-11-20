@@ -1,0 +1,23 @@
+type userProfileResponse {
+    path: String!
+    message: String!, 
+    code: Int!,
+    errors: String,
+    isEmailChanged: Boolean
+}
+
+type Mutation {
+  updateProfile(
+    first_name: String,
+    last_name: String,
+    work_email: String,
+    new_work_email: String,
+    confirm_new_work_email: String,
+    job_title: String,
+    department: String,
+    phone_number: String,
+    mobile: String,
+    country_id: Int,
+    city: String
+  ): userProfileResponse  @isAuth
+}

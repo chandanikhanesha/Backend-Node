@@ -1,0 +1,45 @@
+type PaymentIntent {
+    id: String,
+    client_secret: String,
+    status: String,
+}
+
+type InvoiceDetails {
+    total: Int,
+    subtotal: Int,
+    period_end: Int,
+    period_start: Int,
+    amount_due: Int,
+    amount_paid: Int,
+    amount_remaining: Int,
+    lines: Line,
+    payment_intent: PaymentIntent,
+    subscription: String,
+}
+
+
+type SubscriptionData{
+    id: String,
+    status: String,
+    quantity: Int,
+    current_period_end: Int,
+    current_period_start: Int,
+    latest_invoice: InvoiceDetails,
+}
+
+type SubscriptionResponse {
+    path: String!
+    message: String!,
+    code: Int!,
+    errors: String,
+    subscription: SubscriptionData
+}
+
+type Mutation {
+    createSubscription(
+        payment_method_id: String,
+        license_id: String,
+        price_id: String,
+        quantity: Int,
+    ): SubscriptionResponse @isAuth @hasRole(roles: [Owner])
+}

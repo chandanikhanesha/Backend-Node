@@ -1,0 +1,5 @@
+type Mutation {
+    deleteCertification(
+       id:Int    
+    ): Response @isAuth @hasRole(roles: [Owner, Administrator])
+}

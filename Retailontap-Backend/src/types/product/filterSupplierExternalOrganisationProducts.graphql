@@ -1,0 +1,17 @@
+input FilterParams {
+    id: Int,
+}
+type SupplierOrganisationProductsResponse{
+    path: String!,
+    message: String!,
+    code: Int!,
+    errors: String,
+    products: [Product]
+}
+type Mutation {
+    filterSupplierExternalOrganisationProducts(
+        organisationIds: [FilterParams],
+        hashtagsIds: [FilterParams],
+    ): SupplierOrganisationProductsResponse  @isAuth
+    #@hasRole(roles: [Owner, Administrator]) @hasType(types: [supplier])
+}

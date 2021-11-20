@@ -1,0 +1,7 @@
+type Language {
+  id: Int,
+  name:String,
+}
+type Query {
+    languages: [Language]
+}

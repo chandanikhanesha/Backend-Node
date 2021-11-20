@@ -1,0 +1,12 @@
+type GetInternalUserSamplesResponse {
+    path: String,
+    message: String,
+    code: Int,
+    errors: String,
+    samples: [SampleResponse]
+}
+
+type Query {
+    getInternalUserSamples(userId:Int): GetInternalUserSamplesResponse  @isAuth
+    #@hasType(types: [retailer])
+}

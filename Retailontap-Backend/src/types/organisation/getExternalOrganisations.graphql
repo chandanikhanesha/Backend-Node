@@ -1,0 +1,19 @@
+type Owner {
+    id: Int,
+    first_name: String,
+    last_name: String,
+    work_email: String,
+}
+
+type ExternalOrganisations {
+    id: Int,
+    name: String,
+    work_phone: String,
+    created_at: String,
+    user: [Owner],
+    logo: Logo,
+}
+
+type Query {
+    externalOrganisations: [ExternalOrganisations] @isAuth
+}

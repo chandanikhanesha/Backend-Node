@@ -1,0 +1,24 @@
+
+type ProjectInfo {
+    id: Int,
+    name: String,
+    description: String,
+    notes: String,
+    start_date: String,
+    end_date: String,
+    unit_cost: String,
+    markup: String,
+    retail_price: String,
+    status: String,
+    budget: String,
+    creator:Creator,
+    projectsuppliers:[ProjectSupplier]
+    conversations: [ProjectConversation],
+    hashtags: [Hashtag],
+    images: [ProjectImage],
+}
+
+type Query {
+    projects: [ProjectInfo] @isAuth
+    #@hasRole(roles: [Owner, Administrator]) @hasType(types: [retailer])
+}

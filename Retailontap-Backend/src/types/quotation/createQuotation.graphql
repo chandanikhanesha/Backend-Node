@@ -1,0 +1,14 @@
+type Mutation {
+  createQuotation(
+    supplier_id: Int
+    project_id: Int
+    product_item_id: Int
+    quantity: Int
+    price: Int
+    product_style: String
+    colour: String
+    size: String
+  ): Response @isAuth
+
+  #@hasType(types: [retailer])
+}

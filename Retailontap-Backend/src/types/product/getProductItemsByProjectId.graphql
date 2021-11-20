@@ -1,0 +1,18 @@
+type ProductItem {
+    id: Int,
+    style: String,
+    colour: String,
+    size: String,
+    product_id: Int,
+    unit_price: Int,
+}
+type ProductItemsResponse {
+    id: Int,
+    items: [ProductItem]
+}
+type Mutation {
+    productItemsByProjectId(
+        project_id: Int,
+    ): ProductItemsResponse  @isAuth
+    #@hasRole(roles: [Owner, Administrator]) @hasType(types: [supplier])
+}

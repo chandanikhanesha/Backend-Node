@@ -1,0 +1,10 @@
+
+type Mutation {
+    filterOrdersProductsCounts(
+        supplierOrRetailerId:Int,
+        hashtagId: Int,
+        date_start: String,
+        date_end: String,
+    ): ProductsGroupCounts  @isAuth
+    #@hasType(types: [retailer])
+}

@@ -1,0 +1,11 @@
+type Mutation {
+  completeProfile(
+    first_name: String,
+    last_name: String,
+    job_title: String,
+    old_password: String,
+    new_password: String,
+    phone_number: String,
+    agree: Boolean,
+  ): Response  @isAuth
+}

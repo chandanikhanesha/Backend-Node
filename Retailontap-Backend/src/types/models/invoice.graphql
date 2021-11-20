@@ -1,0 +1,12 @@
+type Invoice {
+  id: String,
+  status: String,
+  description: String,
+  currency: String,
+  paid: Boolean,
+  amount_due: Int,
+  amount_paid: Int,
+  amount_remaining: Int,
+  total: Int,
+  subtotal: Int,
+}

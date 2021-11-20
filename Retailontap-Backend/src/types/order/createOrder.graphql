@@ -1,0 +1,8 @@
+
+type Mutation {
+    createOrder(
+        project_id: Int,
+        quotation_item_id: Int,
+    ): Response  @isAuth
+    #@hasType(types: [retailer])
+}

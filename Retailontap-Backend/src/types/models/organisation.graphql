@@ -1,0 +1,30 @@
+type OrgUser {
+  id: String,
+  first_name: String,
+  last_name: String,
+  work_email: String,
+}
+
+type Organisation {
+  id: Int,
+  uuid: String,
+  customer_no:String,
+  invite_link: String,
+  invite_link_status: Boolean,
+  name: String,
+  organisation_type: String,
+  description: String,
+  domains_url: String,
+  privacy_url: String,
+  work_phone: String,
+  license_count: Int,
+  license_id: Int,
+  country_id: Int,
+  time_zone_id: Int,
+  connected_since: String,
+  createdAt: String,
+  updatedAt: String,
+  logo: Logo,
+  user: OrgUser
+  role: Role
+}

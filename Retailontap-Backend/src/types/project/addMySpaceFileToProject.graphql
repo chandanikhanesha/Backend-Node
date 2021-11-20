@@ -1,0 +1,7 @@
+type Mutation {
+    addMySpaceFileToProject(
+        project_id:Int,
+        newKey: String,
+        oldKey: String,        
+    ): Response @isAuth @hasRole(roles: [Owner, Administrator]) @hasType(types: [retailer])
+}

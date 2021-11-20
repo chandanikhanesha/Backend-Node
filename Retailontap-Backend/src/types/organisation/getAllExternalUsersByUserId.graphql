@@ -1,0 +1,39 @@
+type OrganisationName {
+    id: Int,
+    name: String,
+    organisation_type: String
+}
+type RoleName {
+    id: Int,
+    name: String,
+}
+
+type ExternalUsers {
+    id: Int,
+    first_name: String,
+    last_name: String,
+    job_title: String,
+    department: String,
+    work_email: String,
+    mobile: String,
+    phone_number: String,
+    last_accessed: String,
+    created_at: String,
+    status_id: Int
+    image: Image,
+    organisation: [OrganisationName],
+    role: [RoleName],
+    country: Country,
+    city: String,
+    externalUserHashtags: [Hashtag]
+}
+type GetAllExternalUsersResponse {
+    path: String,
+    message: String,
+    code: Int,
+    errors: String,
+    externalUsers: [ExternalUsers]
+}
+type Query {
+    getAllExternalUsersByUserId(userId:Int): GetAllExternalUsersResponse @isAuth
+}

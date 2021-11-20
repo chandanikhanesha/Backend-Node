@@ -1,0 +1,40 @@
+type Organisation {
+  id: Int,
+  name: String,
+}
+
+type ProfileImage {
+  thumbnail: String,
+}
+
+type User {
+  id: Int,
+  first_name: String,
+  last_name: String,
+  company: String,
+  work_email: String,
+  department: String,
+  job_title: String,
+  phone_number: String,
+  organisation_type: String,
+  language_id: Int,
+  time_zone_id: Int,
+  country: Country,
+  city: String,
+  mobile: String,
+  activated: Boolean,
+  invited_by: Int,
+  two_step_verification: Boolean,
+  email_auth_code: String,
+  is_email_auth_enabled: Boolean,
+  is_google_auth_enabled: Boolean,
+  default_auth_method: String,
+  last_accessed: String,
+  stripe_customer_id: String,
+  payment_method_id: String,
+  created_at: String,
+  organisation: [Organisation],
+  externalUsers: [Connection],
+  role: [Role],
+  image: ProfileImage
+}

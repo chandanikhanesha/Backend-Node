@@ -1,0 +1,6 @@
+type Mutation {
+    createGroup(
+        name: String,
+        group_type: String,
+    ): Response  @isAuth @hasRole(roles: [Owner, Administrator, Standard]) @hasType(types: [retailer])
+}

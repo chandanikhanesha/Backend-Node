@@ -1,0 +1,6 @@
+type Mutation {
+    updateProjectStatus(
+        id:Int,
+        status: String
+    ): Response @isAuth @hasRole(roles: [Owner, Administrator])
+}

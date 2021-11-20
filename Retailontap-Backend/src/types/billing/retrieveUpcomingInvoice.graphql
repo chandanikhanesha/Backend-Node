@@ -1,0 +1,31 @@
+type DiscountAmounts {
+    amount: Int,
+    discount: String,
+}
+
+type LineDataItem {
+    description: String,
+    amount: Int,
+    quantity: Int,
+    discount_amounts: [DiscountAmounts],
+}
+type Line {
+    data: [LineDataItem],
+}
+
+type InvoiceRespone {
+  path: String!
+  message: String!,
+  code: Int!,
+  errors: String,
+  invoice: InvoiceDetails
+}
+
+type Mutation {
+    retrieveUpcomingInvoice(
+        customer_id: String,
+        subscription_id: String,
+        price_id: String,
+        quantity: Int,
+    ): InvoiceRespone @isAuth @hasRole(roles: [Owner])
+}

@@ -1,0 +1,8 @@
+type Reason {
+    id: Int,
+    name: String,
+}
+
+type Query {
+    reasons: [Reason]  @isAuth @hasRole(roles: [Owner])
+}

@@ -1,0 +1,22 @@
+type GetProject {
+    id: Int,
+    name: String,
+    description: String,
+    notes: String,
+    start_date: String,
+    end_date: String,
+    unit_cost: String,
+    markup: String,
+    retail_price: String,
+    status: String,
+    budget: String,
+    conversations: [ProjectConversation],
+    hashtags: [Hashtag],
+    images: [ProjectImage],
+    materials:[Material],
+}
+type Query {
+    project(
+        id: Int,
+    ): GetProject @isAuth @hasRole(roles: [Owner, Administrator]) @hasType(types: [retailer, supplier])
+}

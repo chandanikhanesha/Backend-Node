@@ -1,0 +1,4 @@
+type Logo {
+  id: Int,
+  thumbnail: String,
+}

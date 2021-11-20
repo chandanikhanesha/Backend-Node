@@ -1,0 +1,39 @@
+type userRoleDetail {
+   id: Int,
+   name:String
+}
+
+type organisationUser {
+   id: Int,
+   first_name: String,
+   last_name: String,
+   work_email: String,
+   image: ProfileImage,
+   role: [userRoleDetail]
+}
+
+type organisationDetails {
+   id: Int,
+   organisation_type: String,
+   name:String,
+   user: [organisationUser]   
+   logo: Logo
+}
+
+type ProductDetails {
+    id: Int,
+    organisation:organisationDetails
+    name: String,
+    description: String,
+    colours: [Colour],
+    materials: [Material],
+    hashtags: [Hashtag],
+    images: [Image],
+}
+
+type Mutation {
+    product(
+        id: Int,
+    ): ProductDetails  @isAuth
+    #@hasRole(roles: [Owner, Administrator]) @hasType(types: [supplier])
+}

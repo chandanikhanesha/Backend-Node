@@ -1,0 +1,6 @@
+type Mutation {
+  updateInternalUser(
+    id: Int,
+    role_id: Int,
+  ): InternalUserResponse  @isAuth @hasRole(roles: [Owner])
+}

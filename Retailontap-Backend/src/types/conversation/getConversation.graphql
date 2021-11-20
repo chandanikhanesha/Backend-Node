@@ -1,0 +1,13 @@
+type ConversationResponse{
+    path: String!
+    message: String!,
+    code: Int!,
+    errors: String,
+    conversation: Conversation
+}
+
+type Mutation {
+    getConversation(
+        id: Int,
+    ): ConversationResponse  @isAuth @hasRole(roles: [Owner, Administrator]) @hasType(types: [retailer])
+}

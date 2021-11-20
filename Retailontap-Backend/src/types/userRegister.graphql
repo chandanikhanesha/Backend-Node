@@ -1,0 +1,20 @@
+type Query {
+  bye: String
+}
+
+type Mutation {
+  userRegister(
+    first_name: String,
+    last_name: String,
+    password: String,
+    work_email: String,
+    company: String,
+    work_phone: String,
+    organisation_type: String,
+    country_id: Int,
+    device_type: String,
+    device_id: String,
+    invite_by:String,
+    invite_token:String
+  ): [Response]
+}

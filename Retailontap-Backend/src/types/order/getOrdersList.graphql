@@ -1,0 +1,35 @@
+type OrderProduct {
+    images: [Image]
+}
+type OrderProject {
+    name: String,
+    product: OrderProduct,
+}
+type OrderUser {
+    first_name: String,
+    last_name: String,
+    organisation: [Organisation],
+}
+type OrderQuotation {
+    retailer: OrderUser,
+    supplier: OrderUser,
+}
+type QuotationProductItem {
+    unit_price: String
+}
+type OrderQuotationItem{
+    quantity: Int,
+    quotation: OrderQuotation,
+    productItem: QuotationProductItem
+}
+type OrderResponse {
+    id: Int,
+    delivery_date: String,
+    created_at: String,
+    project: OrderProject,
+    item: OrderQuotationItem
+}
+type Query {
+    orders: [OrderResponse]  @isAuth
+    #@hasType(types: [retailer])
+}

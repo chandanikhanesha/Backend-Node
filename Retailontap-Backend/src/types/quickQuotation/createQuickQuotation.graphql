@@ -1,0 +1,8 @@
+type Mutation {
+  createQuickQuotation(
+    total_units: Int
+    description: String
+    supplier_id: Int
+    project_id: Int
+  ): Response @isAuth
+}

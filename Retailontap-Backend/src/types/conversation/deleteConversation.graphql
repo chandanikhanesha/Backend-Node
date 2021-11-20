@@ -1,0 +1,5 @@
+type Mutation {
+    deleteConversation(
+        id: Int,
+    ): Response  @isAuth @hasRole(roles: [Owner, Administrator]) @hasType(types: [retailer])
+}

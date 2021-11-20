@@ -1,0 +1,30 @@
+input ProductMaterial{
+    id: Int,
+    name: String,
+}
+
+input ProductColour{
+    id: Int,
+    name: String,
+}
+
+input InputProductImage{
+    image: String,
+}
+
+input ProductHashtag {
+    id: Int,
+    name: String,
+}
+
+type Mutation {
+    createProduct(
+        name: String,
+        description: String,
+        colours: [ProductColour],
+        materials: [ProductMaterial],
+        images: [InputProductImage],
+        hashtags: [ProductHashtag],
+    ): Response  @isAuth
+    #@hasRole(roles: [Owner, Administrator]) @hasType(types: [supplier])
+}

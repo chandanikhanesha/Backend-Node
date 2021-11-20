@@ -1,0 +1,6 @@
+type Mutation {
+    connectExternalOrganisation(
+        work_email: String,
+        link: String,
+    ): Response @isAuth @hasRole(roles: [Owner, Administrator])
+}

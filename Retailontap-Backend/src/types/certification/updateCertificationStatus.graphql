@@ -1,0 +1,6 @@
+type Mutation {
+    updateCertificationStatus(
+       id:Int,      
+       is_active:Boolean,      
+    ): Response @isAuth @hasRole(roles: [Owner, Administrator])
+}

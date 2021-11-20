@@ -1,0 +1,6 @@
+type Mutation {
+    saveFeedback(
+       type:Int,
+       feedback_message:String,       
+    ): Response @isAuth
+}

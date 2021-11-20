@@ -1,0 +1,49 @@
+type CardDetail {
+    brand: String,
+    last4: String,
+}
+
+type UpcomingSubscriptionDetail {
+    id: String,
+    license_id: String,
+    card: CardDetail,
+    product_description: String,
+    current_price: String,
+    current_quantity: Int,
+    latest_invoice: InvoiceDetails,
+    upcoming_invoice: InvoiceDetails,
+    start_date:Int,
+    end_date:Int,
+    status:String, 
+}
+
+type SubscriptionDetail {
+    id: String,
+    license_id: String,
+    card: CardDetail,
+    product_description: String,
+    current_price: String,
+    current_quantity: Int,
+    latest_invoice: InvoiceDetails,
+    upcoming_invoice: InvoiceDetails,
+    start_date:Int,
+    end_date:Int,
+    status:String,
+    used_license:Int,
+    last_purchased_subscription_id:String,
+    upcoming_subscription:UpcomingSubscriptionDetail
+}
+
+type RetrieveSubscriptionResponse {
+    path: String!
+    message: String!,
+    code: Int!,
+    errors: String,
+    subscription: SubscriptionDetail
+}
+
+type Mutation {
+    retrieveSubscription(
+        subscription_id: String,
+    ): RetrieveSubscriptionResponse @isAuth @hasRole(roles: [Owner])
+}

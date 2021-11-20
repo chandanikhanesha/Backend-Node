@@ -1,0 +1,8 @@
+
+type Mutation {
+    createSample(
+        supplier_id:Int,
+        project_id: Int,
+        image: String
+    ): Response  @isAuth @hasType(types: [retailer])
+}

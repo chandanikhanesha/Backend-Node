@@ -1,0 +1,29 @@
+type InviteUser{
+  id:Int,
+  first_name: String,
+  last_name: String,
+  work_email: String,
+  image: ProfileImage,
+  invited_by: Int
+  token: String
+}
+
+type Connection {
+   invited_by: Int 
+}
+
+type InviteOrganisation{
+  id:Int,
+  name: String,
+  logo: Logo,
+  user: [Owner]
+}
+
+type InviteList {
+  users: [InviteUser],
+  organisations:[InviteOrganisation]
+}
+
+type Query {
+  getInviteList: InviteList @isAuth
+}

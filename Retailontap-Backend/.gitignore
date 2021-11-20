@@ -1,0 +1,20 @@
+.DS_Store
+node_modules
+npm-debug.log
+# serverless zip
+.serverless
+# webpack build files
+.webpack
+# eslint cache
+.eslintcache
+# local dynamodb
+.dynamodb
+.env*
+
+aws-config.js
+
+# testing files
+user-data.js
+
+.idea
+/.vs

@@ -1,0 +1,29 @@
+type InternalUserDetails {
+  id: Int,
+  first_name: String,
+  last_name: String,
+  work_email: String,
+  job_title: String,
+  department: String,
+  mobile: String,
+  phone_number: String,
+    city: String,
+  last_accessed: String,
+  image: Image,
+  role: [Role],
+  organisation: [Organisation],
+}
+
+type InternalUserResponse {
+  path: String!
+  message: String!,
+  code: Int!,
+  errors: String,
+  internalUser: InternalUserDetails
+}
+
+type Mutation {
+  getInternalUser(
+    id: Int,
+  ): InternalUserResponse  @isAuth @hasRole(roles: [Owner, Administrator])
+}

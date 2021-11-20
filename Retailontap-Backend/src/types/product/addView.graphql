@@ -1,0 +1,6 @@
+
+type Mutation {
+    addView(
+        product_id: Int,
+    ): Response  @isAuth
+}

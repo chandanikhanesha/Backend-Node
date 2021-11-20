@@ -1,0 +1,20 @@
+
+input UpdateImage {
+    id: Int,
+    supplier_name: String,
+    unit: String,
+    image: String,
+}
+
+type Mutation {
+    updateReport(
+        report_id: Int,
+        page_id: Int,
+        column_id: Int,
+        name: String,
+        cover_image: String,
+        cover_title: String,
+        images: [UpdateImage],
+        file_path: String,
+    ): ReportPageResponse  @isAuth
+}

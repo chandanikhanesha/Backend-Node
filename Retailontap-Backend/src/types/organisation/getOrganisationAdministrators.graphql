@@ -1,0 +1,3 @@
+type Query {
+    organisationAdministrators: [User] @isAuth  @hasRole(roles: [Owner])
+}

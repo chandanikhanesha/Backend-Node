@@ -1,0 +1,8 @@
+
+type Mutation {
+    updateNotification(
+        notification_id: Int,
+        value: Boolean,
+    ): Response @isAuth
+    #@hasRole(roles: [Owner])
+}

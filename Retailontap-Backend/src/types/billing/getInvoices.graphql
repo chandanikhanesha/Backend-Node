@@ -1,0 +1,3 @@
+type Query {
+    invoices: [Invoice] @isAuth @hasRole(roles: [Owner])
+}

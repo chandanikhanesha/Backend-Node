@@ -1,0 +1,41 @@
+input ProjectMaterial{
+    id: Int,
+    name: String,
+}
+
+input InputProjectImage{
+    image: String,
+    isImageBase64: Boolean
+}
+
+input ConversationUser{
+    id: Int,
+    first_name: String,
+    last_name: String,
+}
+
+input ProjectHashtag {
+    id: Int,
+    name: String,
+}
+
+type Mutation {
+    createProject(
+        name: String,
+        description: String,
+        notes: String,
+        start_date: String,
+        end_date: String,
+        unit_cost: String,
+        markup: String,
+        retail_price: String,
+        budget: String,
+        product_id: Int,
+        report_id: Int,
+        materials: [ProjectMaterial],
+        images: [InputProjectImage],
+        internalUsers: [ConversationUser],
+        externalUsers: [ConversationUser],
+        hashtags: [ProjectHashtag],
+    ): Response @isAuth @hasRole(roles: [Owner, Administrator, Standard]) @hasType(types: [retailer, supplier])
+}

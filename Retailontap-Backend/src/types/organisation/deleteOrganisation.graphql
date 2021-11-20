@@ -1,0 +1,13 @@
+input Reasons {
+    id: Int,
+    name: String,
+}
+
+type Mutation {
+    deleteOrganisation(
+        id: Int,
+        name: String,
+        reasons: [Reasons],
+        delete_reason_text: String,
+    ): Response @isAuth @hasRole(roles: [Owner])
+}

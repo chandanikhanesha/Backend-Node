@@ -1,0 +1,5 @@
+type Mutation {
+  resendInviteToExternalUser(
+    work_email: String,
+  ): Response  @isAuth @hasRole(roles: [Owner, Administrator, Standard])
+}

@@ -1,0 +1,9 @@
+type Query {
+  bye: String
+}
+
+type Mutation {
+  disableMFA(
+    work_email: String
+  ): Response
+}

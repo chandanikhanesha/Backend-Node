@@ -1,0 +1,10 @@
+type Query {
+  bye: String
+}
+
+type Mutation {
+  enableEmailAuth(
+    work_email: String
+    confirmation_code: String
+  ): Response
+}

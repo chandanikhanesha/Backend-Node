@@ -1,0 +1,5 @@
+type Mutation {
+    removeAdministrator(
+        id: Int,
+    ): Response @isAuth @hasRole(roles: [Owner])
+}

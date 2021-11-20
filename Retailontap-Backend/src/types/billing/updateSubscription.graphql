@@ -1,0 +1,9 @@
+type Mutation {
+    updateSubscription(
+        payment_method_id: String,
+        subscription_id: String,
+        license_id: String,
+        price_id: String,
+        quantity: Int,
+    ): SubscriptionResponse @isAuth @hasRole(roles: [Owner])
+}

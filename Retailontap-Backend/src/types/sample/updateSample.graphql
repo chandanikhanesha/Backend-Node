@@ -1,0 +1,10 @@
+
+type Mutation {
+    updateSample(
+        received_date: String,
+        track_number: String,
+        is_submited: Boolean,
+        id: Int,
+    ): Response  @isAuth
+    #@hasType(types: [retailer])
+}

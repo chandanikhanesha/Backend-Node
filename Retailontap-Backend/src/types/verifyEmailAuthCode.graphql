@@ -1,0 +1,12 @@
+type Query {
+  bye: String
+}
+
+type Mutation {
+  verifyEmailAuthCode(
+    work_email: String
+    verification_code: String,
+    device_type: String,
+    device_id: String,
+  ): Response
+}

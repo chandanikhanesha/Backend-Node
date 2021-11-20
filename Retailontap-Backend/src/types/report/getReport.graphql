@@ -1,0 +1,4 @@
+
+type Query {
+    report(id:Int): ReportsResponse  @isAuth
+}

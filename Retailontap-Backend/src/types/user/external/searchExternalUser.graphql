@@ -1,0 +1,13 @@
+type SearchExternalUser {
+  path: String!
+  message: String!,
+  code: Int!,
+  errors: String,
+  users: [ExternalUsers]
+}
+
+type Mutation {
+  searchExternalUser(
+    searchValue: String,
+  ): SearchExternalUser  @isAuth
+}

@@ -1,0 +1,13 @@
+type PaymentMethodRespone {
+  path: String!
+  message: String!,
+  code: Int!,
+  errors: String,
+  paymentMethod: PaymentMethodDetail
+}
+
+type Mutation {
+    retrievePaymentMethod(
+        payment_method_id: String,
+    ): PaymentMethodRespone @isAuth @hasRole(roles: [Owner])
+}

@@ -1,0 +1,27 @@
+
+type CanceledSubscriptionDetail {
+    id:String,
+    cancel_at:Int,
+    cancel_at_period_end:Boolean,
+    canceled_at:Int,
+    collection_method:String,
+    created:Int,
+    current_period_end:Int,
+    current_period_start:Int,
+    customer:String,   
+    status:String
+}
+
+type CancelSubscriptionResponse {
+    path: String!
+    message: String!,
+    code: Int!,
+    errors: String,
+    subscription: CanceledSubscriptionDetail
+}
+
+type Mutation {
+    cancelSubscription(
+        subscription_id: String,
+    ): CancelSubscriptionResponse @isAuth @hasRole(roles: [Owner])
+}

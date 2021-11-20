@@ -1,0 +1,25 @@
+type PaymentData {
+  id: String,
+  status: String,
+  description: String,
+  currency: String,
+  amount: Int,
+  amount_capturable: Int,
+  amount_received: Int,
+  invoice: String,
+  confirmation_method: String,
+  created: Int,
+  receipt_number:  String,
+  customer: String,
+  charges: Charges,
+  invoice_details:InvoiceData
+}
+
+type paymentsDetails {
+   totalItems:Int,
+   paymentsList:[PaymentData]
+}
+
+type Query {
+   payments(page:Int,pagesize:Int,sortby:String,sortdirection:String): paymentsDetails @isAuth @hasRole(roles: [Owner])
+}

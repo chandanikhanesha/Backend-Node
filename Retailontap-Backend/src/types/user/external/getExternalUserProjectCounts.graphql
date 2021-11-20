@@ -1,0 +1,8 @@
+type CountDetails {   
+   count: String,
+   network: String,  
+}
+
+type Query {   
+    projectCountDetails(id:Int): [CountDetails] @isAuth
+}

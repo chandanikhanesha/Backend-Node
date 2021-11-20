@@ -1,0 +1,31 @@
+input PageColumns {
+    column_id:Int,
+    image:String,
+    supplier_name: String,
+    unit: String,
+}
+
+input Page {
+    page:Int,
+    subject:String,
+    description:String,
+    columns: [PageColumns]
+}
+
+type ReportPageResponse {
+    path: String!
+    message: String!,
+    code: Int!,
+    errors: String    
+}
+
+type Mutation {
+    createReportPage(
+        report_id: Int,
+        template_id: Int,
+        cover_image: String,
+        cover_title:String,
+        pages: [Page],
+        file_path: String
+    ): ReportPageResponse  @isAuth
+}

@@ -1,0 +1,11 @@
+type Mutation {
+    createReportWithPage(
+        name: String,
+        type_id: Int,
+        template_id: Int,
+        cover_image: String,
+        cover_title:String,
+        pages: [Page],
+        file_content: String,
+    ): ReportPageResponse  @isAuth
+}

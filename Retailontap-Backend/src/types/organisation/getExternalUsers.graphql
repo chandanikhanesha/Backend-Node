@@ -1,0 +1,30 @@
+type OrganisationName {
+    id: Int,
+    name: String,
+}
+type RoleName {
+    id: Int,
+    name: String,
+}
+
+type ExternalUsers {
+    id: Int,
+    first_name: String,
+    last_name: String,
+    job_title: String,
+    department: String,
+    work_email: String,
+    mobile: String,
+    phone_number: String,
+    country: Country,
+    city: String,
+    last_accessed: String,
+    created_at: String,
+    image: Image,
+    organisation: [OrganisationName],
+    role: [RoleName]
+}
+
+type Query {
+    externalUsers: [ExternalUsers] @isAuth
+}

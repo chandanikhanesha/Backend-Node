@@ -1,0 +1,7 @@
+type Mutation {
+    inviteToConversation(
+        id: Int,
+        internalUsers: [ConversationUser],
+        externalUser: ConversationUser,
+    ): Response  @isAuth @hasRole(roles: [Owner, Administrator]) @hasType(types: [retailer])
+}

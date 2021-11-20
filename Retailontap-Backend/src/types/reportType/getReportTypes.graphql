@@ -1,0 +1,8 @@
+
+type ReportType {
+    id: Int,
+    name: String,
+}
+type Query {
+    reportTypes: [ReportType] @isAuth
+}
