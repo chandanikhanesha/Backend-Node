@@ -1,0 +1,46 @@
+.card_list_wrapper {
+  clear: both;
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  margin-bottom: 60px;
+}
+.iconcard_list {
+  border: 1px solid rgb(179, 178, 178);
+  margin-right: 25px;
+  height: 140px;
+  max-width: 100px;
+}
+.iconcard_list:hover {
+  border: 1px solid #e83151;
+}
+.iconlist {
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.icon_title {
+  display: block;
+  text-align: center;
+  padding: 0px 4px;
+  font-size: 14px;
+  color: #000000;
+  font-weight: 500;
+}
+.icon_subtitle {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #000000;
+  opacity: 0.6;
+}
+.show_btn {
+  background: #eee;
+
+  border-radius: 100px;
+  border: none;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #000000;
+}

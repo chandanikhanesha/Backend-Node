@@ -1,0 +1,92 @@
+.footer {
+  /* height: 100px;
+    width: 100%;
+    background-color: #ffffff; */
+  position: relative;
+  background-color: #191d33;
+  width: 100%;
+  margin-top: 10px;
+}
+.footer_logo {
+  width: 207px;
+  height: 56px;
+}
+.fb_logo {
+  /* margin-left: 600px; */
+  margin-left: 200px;
+}
+.linkd_logo,
+.twit_logo {
+  margin-left: 30px;
+}
+
+.row {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+}
+.footer_top {
+  padding-top: 70px;
+  padding-bottom: 65px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 20px;
+  position: relative;
+  color: white;
+}
+.footer_input {
+  margin-top: 30px;
+  height: 50px;
+}
+.logo_p {
+  margin-top: 40px;
+
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  margin: 20px 0px 0px 10px;
+}
+.contact_info {
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  margin-left: 5px;
+}
+.input-group-text {
+  background-color: rgb(255, 255, 255);
+  border: none;
+}
+.submit-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 28px;
+  height: 43px;
+  color: #320078;
+  line-height: 44px;
+  margin-top: 61px;
+  border: none;
+  margin-right: 18px;
+  background-color: white;
+}
+.recentpost {
+  height: 80px;
+  width: 80px;
+}
+.a_link {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 17px;
+  font-weight: bold;
+  line-height: -10px;
+}
+.copyright_area {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}

@@ -1,0 +1,44 @@
+.nav {
+  background-color: transparent !important;
+  height: 100px;
+  align-items: center;
+}
+.navbar {
+  padding: 10px 0;
+}
+
+.nav-link {
+  color: #2c2f76 !important;
+  font-weight: bold;
+  float: left;
+}
+
+.menu_container {
+  margin: auto;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.nav-item > button.dropdown-toggle-split {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 8px;
+  background: transparent;
+  margin: auto 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .menu_container,
+  .navbar-toggler {
+    background-color: white;
+  }
+  .nav-item {
+    padding: 5px 10px;
+  }
+  .nav-item > button.dropdown-toggle-split {
+    margin-left: 10px;
+  }
+}

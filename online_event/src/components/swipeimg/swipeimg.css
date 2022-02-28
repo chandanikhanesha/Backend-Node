@@ -1,0 +1,15 @@
+.swipe_container {
+  margin-top: 0;
+  margin-bottom: 3.5vw;
+  background-color: #373435;
+  overflow: hidden;
+  height: auto;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+.demo {
+  width: 100%;
+  display: flex;
+  margin-top: 30px;
+}

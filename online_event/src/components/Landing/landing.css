@@ -1,0 +1,11 @@
+.main_container {
+  position: relative;
+}
+.h2 {
+  font-family: korolev-condensed, sans-serif;
+  font-size: 1.5rem;
+  display: block;
+  font-weight: 700;
+  color: #373435;
+  letter-spacing: -1px;
+}

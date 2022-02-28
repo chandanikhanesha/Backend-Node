@@ -1,0 +1,22 @@
+.artist_conatiner {
+  margin-bottom: 50px;
+}
+.singer {
+  border-radius: 50%;
+  height: 150px;
+}
+.round_name {
+  color: #000;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 5px;
+  font-size: 15px;
+  display: block;
+  text-align: center;
+}
+.round_subname {
+  display: block;
+  color: gray;
+  font-size: 12px;
+  text-align: center;
+}

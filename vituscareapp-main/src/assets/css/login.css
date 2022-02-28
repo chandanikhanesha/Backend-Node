@@ -1,0 +1,116 @@
+.login_container {
+  background-color: rgb(252, 248, 248);
+
+  height: 100vh;
+  width: 100%;
+}
+.loginlogo {
+  margin: 40px;
+}
+
+.maledoc {
+  height: 470px;
+  margin-left: 40px;
+}
+
+.login_page {
+  display: flex;
+}
+
+.login_head {
+  height: 60px;
+
+  margin-left: 15px;
+  text-transform: capitalize;
+  color: #2c2f76;
+  font-size: 20px;
+}
+.side_border {
+  border-left: 3px solid red;
+  margin-left: 170px;
+  height: 60px;
+}
+.login_box {
+  background-color: white;
+  height: 320px;
+  width: 400px;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 3px 1px 7px 2px #aaaaaa;
+  margin-top: 100px;
+  margin-left: -160px;
+  box-sizing: border-box;
+}
+.smallbox {
+  background-color: violet;
+  height: 85px;
+  border: 1px solid #cfcccc;
+  border-radius: 6px;
+  background-color: white;
+  margin-left: 15px;
+  width: 75px;
+}
+.form-select:focus {
+  border-color: rgb(99, 99, 99);
+}
+.select_num {
+  margin-right: 10px;
+  border-color: rgb(99, 99, 99);
+  background-color: white;
+  border-radius: 4px;
+  height: 38px;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: rgb(99, 99, 99);
+}
+.mobile_input {
+  width: 275px;
+  border-color: rgb(99, 99, 99);
+  background-color: white;
+  border-radius: 4px;
+}
+.patient_img,
+.caregiver_img,
+.doctor_img,
+.chemist_img {
+  height: 45px;
+  margin-top: 7px;
+  margin-left: 20px;
+}
+.img_text {
+  font-size: 10px;
+  margin-left: 19px;
+  text-align: center;
+  align-content: center;
+  font-weight: bold;
+}
+
+.num_text {
+  font-size: 15px;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: #413e3e;
+  line-height: 40px;
+}
+.loginbtn {
+  height: 35px;
+  width: 130px;
+  margin-top: 25px;
+  margin-left: 115px;
+  text-align: center;
+  color: white;
+  background-color: #2c2f76;
+}
+.last_text {
+  margin-top: -30px;
+  margin-left: 790px;
+  height: 33px;
+  border-radius: 5px;
+  border: none;
+  background-color: white;
+  width: 280px;
+  margin-bottom: 400px;
+  display: flex;
+}

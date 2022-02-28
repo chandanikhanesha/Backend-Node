@@ -1,0 +1,12 @@
+.venues_container {
+  margin-bottom: 40px;
+}
+.boximg {
+  border-radius: 15%;
+  height: 150px;
+}
+.box {
+  display: block;
+  margin-right: 40px;
+  margin-top: 20px;
+}

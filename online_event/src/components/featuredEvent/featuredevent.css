@@ -1,0 +1,95 @@
+.featured-card {
+  box-shadow: 2px 4px 18px 0 rgb(0 0 0 / 10%);
+  border-radius: 6px;
+  overflow: hidden;
+  transform: translateZ(0);
+  margin-bottom: 30px;
+  width: auto;
+  margin-right: 30px;
+}
+.card-list-wrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  margin-bottom: 30px;
+}
+.featured_date,
+.featured_venue,
+.featured_price {
+  display: block;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 5px;
+  color: #676465;
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+}
+.featured_price {
+  color: black;
+}
+.featured_footer {
+  color: #e83151;
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.featured_footericon {
+  color: #e83151;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+.card_img {
+  height: 250px;
+}
+.featured_name {
+  font-size: 1.22rem;
+  line-height: 11;
+  padding: 51% 16px 40px;
+  position: absolute;
+  display: block;
+  z-index: 1;
+  width: 100%;
+  bottom: 0;
+  text-align: left;
+  color: #fff;
+  font-weight: 700;
+}
+.card_btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #c20000;
+  border-radius: 2px;
+  padding: 6px 8px;
+}
+.card_Carousel {
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-list {
+  padding: 0;
+  clear: both;
+  min-height: 10px;
+  display: flex;
+}
+.card_Carousellist {
+  margin-right: 30px;
+  padding-right: 40px;
+}
+.slick-prev,
+.slick-next {
+  background-color: #e83151;
+}
+.slick-prev,
+.slick-next:hover {
+  background-color: #c20000;
+}

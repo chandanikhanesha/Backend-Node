@@ -1,0 +1,30 @@
+.digital_container {
+  margin-bottom: 40px;
+}
+
+.col-md-2 {
+  border-radius: 6px;
+  height: 100%;
+  width: 33%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.title {
+  font-family: korolev-condensed, sans-serif;
+  font-size: 1.4rem;
+  display: block;
+  font-weight: 700;
+  color: #373435;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+.art3 {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+#title_icon {
+  color: #e83151;
+
+  margin-left: 5px;
+}
