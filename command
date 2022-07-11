@@ -38,7 +38,7 @@ pm2 start index.js
 
 
 
-mytoken:-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
+mytoken:-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
 
 ///ok if some one signsup in freefireindia.tech can we make it so that they can use the same id to sign in to streamit.co.in ?
 
